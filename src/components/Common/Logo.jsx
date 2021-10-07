@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
-import LogoImg from '../image/KIMP.png';
+import LogoImg from '../../image/KIMP.png';
 
 function Logo() {
     return (

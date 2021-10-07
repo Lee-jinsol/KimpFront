@@ -1,35 +1,24 @@
-import React, { useState } from 'react'
-import { Radio } from 'antd';
+import React from 'react'
 import styled from 'styled-components'
-import ForSale from '../components/ForSale';
+import ForSale from '../components/List/ForSale';
 import { openData } from '../data/openData';
-import Center from '../components/Center';
+import Center from '../components/Layout/Center';
+import Properties from '../components/List/Properties';
 
 function List() {
-    
-    const [Default, setDefault] = useState('a')
-    // const [SeachData, setSeachData] = useState('')
 
-    const change = e => {
-        setDefault(e.target.value)
-    }
-
-    const Properties = styled.div`
+    const Content = styled.div`
         padding: 50px;
     `
-
+    
     return (
         <div style={{padding: '50px'}}>
             <Center>
-                <Radio.Group defaultValue={Default} onChange={change} buttonStyle="solid">
-                    <Radio.Button value="a">Open Properties</Radio.Button>
-                    <Radio.Button value="b">Secret Properties</Radio.Button>
-                </Radio.Group>
+                <Properties/>
             </Center>
-            <Properties>
+            <Content>
                 <ForSale list={openData}/>
-
-            </Properties>
+            </Content>
         </div>
     )
 }

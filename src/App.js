@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import MenuBar from './components/MenuBar'
-import Footers from './components/Footers';
+import MenuBar from './components/Common/MenuBar'
+import Footers from './components/Common/Footers';
 import Home from './routes/Home'
 import About from './routes/About';
 import Register from './routes/Register';

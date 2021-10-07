@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import Logo from './Logo';
-import Ul from './Ul';
 
 function Footers() {
 
@@ -29,6 +28,11 @@ function Footers() {
         color: #000;
         margin-right: 10px;
     }
+    `
+    const Ul = styled.ul`
+        list-style:none;
+        margin: 0;
+        padding: 0;
     `
 
     return (
