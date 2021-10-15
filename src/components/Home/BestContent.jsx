@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
-import { Card } from 'antd';
 import styled from 'styled-components'
+import CardContent from "../Common/CardContent";
 
 import SwiperCore, {
     Pagination
@@ -44,17 +44,7 @@ function SliderFour(props) {
             }} className="mySwiper">
             {props.list && props.list.map((content, index) => (    
                 <SwiperSlide>
-                    <Card
-                    key={index}
-                    style={{ width: 300 , height: 450 }}
-                    hoverable
-                    cover={<img alt={index} src={content.image} style={{ width: 300, height: 200}}/>}
-                >
-                    <h1>{content.name}</h1>
-                    <p>위치: {content.location}</p>
-                    <p>매출: {content.sales}</p>
-                    <p>{content.details}</p>
-                    </Card>
+                    { content && <CardContent content={content} index={index}/> }
                 </SwiperSlide>
             ))}
             </Slider>

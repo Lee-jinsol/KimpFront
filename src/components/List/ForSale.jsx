@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
-import { Card, Col, Row, Pagination, Input } from 'antd';
-import styled from 'styled-components';
-import Center from '../components/Center';
-import Half from '../components/Half';
+import { Col, Row, Pagination, Input } from 'antd';
+import Center from '../Layout/Center';
+import Half from '../Layout/Half';
+import CardContent from "../Common/CardContent";
 
 const { Search } = Input;
-
-const CardSize = styled(Card)`
-width: 100%;
-height: 480px;
-overflow: hidden;
-`
 
 function ForSale(props) {
     const openData = props.list;
@@ -23,7 +17,6 @@ function ForSale(props) {
     const [PageValue, setPageValue] = useState(pageDefault)
 
     const handleChange = (value) => {
-        console.log('e', value)
         if(value === 1){
             setPageValue({
                min: 0,
@@ -43,7 +36,7 @@ function ForSale(props) {
             setData(openData)
         }else{
             openData &&  openData.forEach((content) => {
-                if(content.name === value){
+                if((content.name).includes(value)){
                     arr.push(content);
                 }
             })
@@ -60,32 +53,22 @@ function ForSale(props) {
             onSearch={onSearch} 
             style={{ width: 200 }}  
             enterButton allowClear />
-            </Half>
+        </Half>
         <Row gutter={[16, 16]}>
             {Data && 
             Data.slice(PageValue.min, PageValue.max).map((content, index) => (
-            
             <Col lg={6} md={8} xs={24}>
-                <CardSize
-                key={index}
-                hoverable
-                cover={<img alt={index} src={content.image} style={{ height: 200 }}/>}
-            >
-                <h1>{content.name}</h1>
-                <p>위치: {content.location}</p>
-                <p>매출: {content.sales}</p>
-                <p>{content.details}</p>
-                </CardSize>
+                { content && <CardContent content={content} index={index}/> }
             </Col>
             ))}
         </Row>
         <Center>
-                <Pagination 
-                defaultCurrent={1}
-                defaultPageSize={8}
-                onChange={(e) => handleChange(e)}
-                total={Data.length} //total number of card data available
-                />
+            <Pagination 
+            defaultCurrent={1}
+            defaultPageSize={8}
+            onChange={(e) => handleChange(e)}
+            total={Data.length} //total number of card data available
+            />
         </Center>
         </>
     )
