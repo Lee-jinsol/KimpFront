@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import {Form, Input, Select, Checkbox, Button, AutoComplete} from 'antd';
-
-const {Option} = Select;
+import React from 'react';
+import {Form, Input, Checkbox, Button} from 'antd';
+import styled from 'styled-components';
 
 const formItemLayout = {
   labelCol: {
@@ -34,162 +33,186 @@ const tailFormItemLayout = {
   },
 };
 
-const inputform = {
-  width: '600px',
-};
-
-const regisform = {
-  position: 'absolute',
-  top: '40%',
-  left: '50%',
-  transform: 'translate(-50%,-50%)',
-};
-
 function Register() {
+  const BREAK_POINT_LARGE = 992;
+  const BREAK_POINT_MEDIUM = 768;
+  const BREAK_POINT_SMALL = 576;
+
+  const Section = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    text-align: center;
+
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      width: 400px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+      width: 300px;
+    }
+  `;
+
+  const Inputform = styled.section`
+    width: 600px;
+  `;
+
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
 
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(
-        ['.com', '.org', '.net'].map((domain) => `${value}${domain}`)
-      );
-    }
-  };
-
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
   return (
-    <div style={regisform}>
+    <Section>
       <Form
-        style={inputform}
         {...formItemLayout}
+        layout={'vertical'}
         form={form}
-        name="register"
         onFinish={onFinish}
         scrollToFirstError
       >
-        <Form.Item
-          name="email"
-          label="E-mail"
-          rules={[
-            {
-              type: 'email',
-              message: '이메일의 형식이 맞지 않습니다.',
-            },
-            {
-              required: true,
-              message: '이메일을 입력해주세요.',
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="password"
-          label="Password"
-          rules={[
-            {
-              required: true,
-              message: '비밀번호를 입력해주세요.',
-            },
-          ]}
-          hasFeedback
-        >
-          <Input.Password />
-        </Form.Item>
-
-        <Form.Item
-          name="confirm"
-          label="Confirm Password"
-          dependencies={['password']}
-          hasFeedback
-          rules={[
-            {
-              required: true,
-              message: '비밀번호를 다시 한번 입력해주세요.',
-            },
-            ({getFieldValue}) => ({
-              validator(_, value) {
-                if (!value || getFieldValue('password') === value) {
-                  return Promise.resolve();
-                }
-
-                return Promise.reject(
-                  new Error('The two passwords that you entered do not match!')
-                );
+        <Inputform>
+          <Form.Item
+            name="email"
+            label="E-mail"
+            rules={[
+              {
+                type: 'email',
+                message: '이메일의 형식이 맞지 않습니다.',
               },
-            }),
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
+              {
+                required: true,
+                message: '이메일을 입력해주세요.',
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            name="password"
+            label="Password"
+            rules={[
+              {
+                required: true,
+                message: '비밀번호를 입력해주세요.',
+              },
+            ]}
+            hasFeedback
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item
+            name="confirm"
+            label="Confirm Password"
+            dependencies={['password']}
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: '비밀번호를 다시 한번 입력해주세요.',
+              },
+              ({getFieldValue}) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+
+                  return Promise.reject(
+                    new Error('입력하신 비밀번호가 일치하지 않습니다.')
+                  );
+                },
+              }),
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item
+            name="name"
+            label="Name"
+            rules={[
+              {
+                required: true,
+                message: '이름을 입력해주세요.',
+                whitespace: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            name="phone"
+            label="Phone Number"
+            rules={[
+              {
+                required: true,
+                message: '전화번호를 입력해주세요.',
+              },
+            ]}
+          >
+            <Input
+              style={{
+                width: '100%',
+              }}
+            />
+          </Form.Item>
+        </Inputform>
 
         <Form.Item
-          name="name"
-          label="Name"
-          rules={[
-            {
-              required: true,
-              message: '이름을 입력해주세요.',
-              whitespace: true,
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="phone"
-          label="Phone Number"
-          rules={[
-            {
-              required: true,
-              message: '전화번호를 입력해주세요.',
-            },
-          ]}
-        >
-          <Input
-            style={{
-              width: '100%',
-            }}
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="agreement"
+          name="agreement1"
           valuePropName="checked"
           rules={[
             {
               validator: (_, value) =>
                 value
                   ? Promise.resolve()
-                  : Promise.reject(new Error('개인정보 활용에 동의 해주세요.')),
+                  : Promise.reject(new Error('서비스 이용약관 동의 해주세요.')),
             },
           ]}
           {...tailFormItemLayout}
         >
           <Checkbox>
-            개인정보 활용에 동의합니다. <a href=""></a>
+            서비스 이용약관 동의 (필수) <a href=""></a>
           </Checkbox>
         </Form.Item>
+
+        <Form.Item
+          name="agreement2"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(
+                      new Error('개인정보 수집 이용 동의 해주세요.')
+                    ),
+            },
+          ]}
+          {...tailFormItemLayout}
+        >
+          <Checkbox>
+            개인정보 수집 이용 동의 (필수) <a href=""></a>
+          </Checkbox>
+        </Form.Item>
+
+        <Form.Item {...tailFormItemLayout}>
+          <Checkbox>
+            광고성 정보 수신 및 마케팅 활용 동의 (선택) <a href=""></a>
+          </Checkbox>
+        </Form.Item>
+
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
             Register
           </Button>
         </Form.Item>
       </Form>
-    </div>
+    </Section>
   );
 }
 

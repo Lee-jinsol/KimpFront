@@ -3,7 +3,6 @@ import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import styled from 'styled-components';
 
 function Login() {
-  const BREAK_POINT_LARGE = 992;
   const BREAK_POINT_MEDIUM = 768;
   const BREAK_POINT_SMALL = 576;
 
@@ -15,6 +14,16 @@ function Login() {
   `;
 
   const Inputform = styled.section`
+    width: 500px;
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      width: 400px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+      width: 300px;
+    }
+  `;
+
+  const LoginButton = styled(Button)`
     width: 500px;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
@@ -69,14 +78,16 @@ function Login() {
             />
           </Form.Item>
         </Inputform>
+
         <Form.Item>
-          <Button
+          <LoginButton
             type="primary"
             htmlType="submit"
             className="login-form-button"
           >
             Log in
-          </Button>
+          </LoginButton>
+
           <br></br>
           <br></br>
           <a href="Register">잠깐! 아직 회원가입을 하지 않으셨나요?</a>
