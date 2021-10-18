@@ -12,15 +12,26 @@ import styled from 'styled-components';
 
 function Review(props) {
 
-    // const [Star, setStar] = useState(0);
+    const BREAK_POINT_LARGE = 992;
+    const BREAK_POINT_MEDIUM = 768;
+    const BREAK_POINT_SMALL = 576;
 
     const Slider = styled(Swiper)`
-    height: 300px;
+    height: 350px;
     .swiper-button-prev, .swiper-button-next{
         color: #102A3E;
     }
     .swiper-pagination-bullet-active{
         background: #102A3E;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+        height: 400px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+        height: 350px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        height: 470px;
     }
     `
     const stars = (data) => [
@@ -30,14 +41,28 @@ function Review(props) {
     return (
         <>
         <Slider
-            slidesPerView={2}
-            spaceBetween={30}
+            // slidesPerView={2}
+            // spaceBetween={30}
             loop={true}
             loopFillGroupWithBlank={true}
             pagination={{
-                clickable: true
+                "clickable": true
               }}
             navigation={true}
+            breakpoints={{
+            "576": {
+                "slidesPerView": 1,
+                "spaceBetween": 10
+            },
+            "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 20
+            },
+            "1024": {
+                "slidesPerView": 2,
+                "spaceBetween": 30
+            }
+        }}
             className="mySwiper"
         >
          {props.list && props.list.map((content, index) => (    

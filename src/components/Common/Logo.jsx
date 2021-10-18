@@ -6,7 +6,7 @@ function Logo() {
     return (
         <>
         <NavLink to="/">
-            <img src={LogoImg} width="150" alt="" />
+            <img src={LogoImg} width="150" alt="로고" style={{padding: '20px'}} />
         </NavLink>
         </>
     )
