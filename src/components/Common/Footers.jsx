@@ -4,6 +4,8 @@ import Logo from './Logo';
 
 function Footers() {
 
+    const BREAK_POINT_MEDIUM = 768;
+
     const Bottom = styled.footer`
         display : flex;
         justify-content: space-between;
@@ -11,13 +13,19 @@ function Footers() {
         padding: 5px 20px;
         border-top: 1px solid #373737;
         box-shadow: 4px #373737;
+        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+            display : block;
+        }
     `
     
     const Block = styled.div`
     width: 100%;
     display: block;
-    padding: 50px;
+    padding: 30px;
     text-align: center;
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+        padding: 10px;
+    }
     `
 
     const Division = styled.div`
@@ -27,6 +35,9 @@ function Footers() {
     h3{
         color: #000;
         margin-right: 10px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+        display : block;
     }
     `
     const Ul = styled.ul`

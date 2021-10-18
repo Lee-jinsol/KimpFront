@@ -1,104 +1,124 @@
 import styled from 'styled-components'
-import React from 'react'
+import React, { useState }  from 'react'
 import Logo from './Logo';
 import { NavLink } from "react-router-dom";
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 function MenuBar() {
+
+    const BREAK_POINT_MEDIUM = 768;
 
     const Menu = styled.header`
         position:sticky;
         top:0;
         z-index: 90;
         box-shadow: 0 0 4px #373737;
+        width: 100%;
 
         background: #fff;
         display : flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 20px;
-        font-weight: Bold 700;
-        cursor: pointer;
         nav{
             ul{
+                display: inline-block;
+                float: right;
                 padding: 0;
                 margin: 0;
                 list-style: none;
                 background: #fff;
                 z-index: 99;
                 li{
-                    margin: 5px 25px;
-                    display: inline-block;
-                    position: relative;
-                    &:hover{
-                        border-bottom: 2px solid #102A3E;
-                        ul{
-                            opacity: 1;
-                        }
-                    }
+                    float: left;
+                    padding: 10px 20px;
                     a{
-                        text-decoration:none;
-                        color: #000;
+                        padding: 5px 20px;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: #102A3E;
+                            transform: scaleY(0);
+                            transform-origin: right;
+                            transition: transform 0.5s;
+                            z-index: -1;
+                          }
+                        &:hover{
+                            color: #fff;
+                        }
+                        &:hover::after {
+                            transform: scaleY(1);
+                            transform-origin: left;
+                          }
+                    }
+                    .active{
+                        background: #102A3E;
+                        color: #fff;
                     }
                 }
-                .active{
-                    background: #102A3E;
-                    color: #fff;
-                    padding: 5px 15px;
+            }
+        }
+
+        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+            height: 105px;
+            display : block;
+            line-height: 30px;
+            background: #fff;
+            ul{
+                flex-direction: column;
+                align-items: flex-start;
+                visibility: hidden;
+                opacity: 0;
+                li{
+                    width: 100%;
+                    text-align: center;
+                    background: #e7e7e77e;
                 }
             }
-        }
-
-        @media only screen and (max-width: 576px) {
-            display : block;
-            padding: 0px;
-            li{
-                width: 100%;
+            .mobile ul{
+                visibility: visible;
+                opacity: 0.9;
+                width: 100%;  
             }
+        
+        }
+    `
+        const Icon = styled.div`
+        display: none;
+        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+            position: absolute;
+            display: block;
+            text-align: right;
+            font-size: 20px;
+            top: 30px;
+            right: 20px;
         }
     `
 
-    const SubMenu = styled.ul`
-        width: 150px;
-        opacity: 0;
-        position: absolute;
-        padding: 0px;
-        li{
-            padding-top: 15px;
-            left: 0;
-        }
+    const [click, setClick] = useState(false);
 
-        @media only screen and (max-width: 576px) {
-            li{
-                text-align: right;
-            }
-        }
-    `
+    const handleClick = () => setClick(!click);
 
     return (
         <>
             <Menu>
                 <Logo/>
-                <nav>
+                <nav className={click ? "mobile" : "nav-menu"}>
                     <ul>
-                        <li>
-                            <NavLink to="/list">M & A List</NavLink>
-                        </li>
-                        <li> 
-                            Success story
-                            <SubMenu> 
-                                <li>Drop Menu 1</li>
-                                <li>Drop Menu 2</li>
-                                <li>Drop Menu 3</li>
-                                <li>Drop Menu 4</li>
-                            </SubMenu>
-                        </li>
-                        <li>Partners</li>
-                        <li activeClassName="active">
-                            <NavLink to="/aboutUs">About Us</NavLink>
-                        </li>
+                        <li><NavLink to="/list">M & A List</NavLink></li>
+                        <li><NavLink to="/aboutUs">About Us</NavLink></li>
                         <li><NavLink to="/logIn">Log In</NavLink></li>
                         <li><NavLink to="/register">Register</NavLink></li>
                     </ul>
+                    <Icon onClick={handleClick}>
+                        { click ?  <CloseOutlined /> : <MenuOutlined />}
+                    </Icon>
                 </nav>
             </Menu>
         </>

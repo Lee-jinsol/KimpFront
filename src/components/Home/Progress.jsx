@@ -1,15 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
-import mainImg from '../image/MainImg.png';
+import ProgressImg from '../../image/ProgressImg.jpg';
 import Half from '../Layout/Half';
 import Number from '../Home/Number';
 
 function Progress() {
+    const BREAK_POINT_EXTRA_LARGE = 1200;
+    const BREAK_POINT_LARGE = 992;
+    const BREAK_POINT_SMALL = 576;
+
     const Reason =  styled.section`
         padding: 50px;
         background: #102A3E;
         h1{
             color: #fff;
+        }
+        img{
+            width: 100%;
+            height: 500px;
+        }
+        @media only screen and (max-width: ${BREAK_POINT_EXTRA_LARGE}px) {
+           img{
+            height: 300px;
+           } 
+        }
+        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+            padding: 20px;
         }
     `
         const Division = styled.div`
@@ -26,12 +42,19 @@ function Progress() {
         width: 100%;
         display: block;
         padding: 50px;
+        @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+            padding: 0;
+        }
     `
+    
 
     const Line = styled.div`
         border-left: 1px solid white; 
         height: 40px;
         margin: 20px;
+        @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+            display: none;
+        }
     `
 
     return (
@@ -40,7 +63,6 @@ function Progress() {
                 <h1>KIMP에서 M&A를 진행해야 하는 이유</h1>
                 <Half>
                     <Block>
-                        
                         <Division>
                         <Number white>1</Number>
                         <div style={{paddingLeft: '30px'}}>
@@ -65,7 +87,7 @@ function Progress() {
                         </div>
                         </Division>
                     </Block>
-                    <img src={mainImg} alt="progress"/>
+                    <img src={ProgressImg} alt="progress"/>
                 </Half>
             </Reason>
         </>

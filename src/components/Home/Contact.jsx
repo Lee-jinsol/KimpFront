@@ -1,9 +1,11 @@
 import React from 'react'
-import { MailFilled } from '@ant-design/icons';
+import { PhoneFilled, MailFilled } from '@ant-design/icons';
 import styled from 'styled-components'
-import PhoneIcon from './PhoneIcon';
+// import PhoneIcon from './PhoneIcon';
 
 function Contact() {
+
+    const BREAK_POINT_SMALL = 576;
 
     const AtAnyTime =  styled.section`
     padding: 50px;
@@ -11,6 +13,21 @@ function Contact() {
     text-align: center;
     h1{
         color: #fff;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        padding: 40px;
+        h1{
+            font-size: 20px;
+        }
+    }
+    `
+
+    const Center = styled.div`
+        display: flex;
+        justify-content: center;
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        display:inline-block;
+        text-align: center;
     }
     `
 
@@ -31,6 +48,17 @@ function Contact() {
                 font-size: 20px;
             }
         }
+        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+            width: 200px;
+            height: 150px;
+            margin: 0px;
+            margin-top: 30px;
+        }
+    `
+
+    const TelIcon = styled(PhoneFilled)`
+        transform: rotateY(180deg); 
+        font-size: 50px
     `
 
     return (
@@ -38,10 +66,10 @@ function Contact() {
             <AtAnyTime>
                 <h1> 궁금한 점이 있으면 언제든지 연락주세요. </h1>
                 <h1> KIMP는 365일 24시간 열려있습니다. </h1>
-                <div style={{display: 'flex', justifyContent: 'center'}}>
+                <Center>
                 <White>
                     <ul>
-                        <li><PhoneIcon  style={{ fontSize: '50px' }}/></li>
+                        <li><TelIcon  /></li>
                         <li> 02-6000-5351</li>
                     </ul>
                 </White>
@@ -51,7 +79,7 @@ function Contact() {
                         <li>tradehelp@kita.net</li>
                     </ul>
                 </White>
-                </div>
+                </Center>
             </AtAnyTime>   
         </>
     )

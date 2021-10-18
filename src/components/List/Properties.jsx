@@ -12,7 +12,7 @@ function Properties() {
     return (
         <>
         <Radio.Group defaultValue={Default} onChange={change} buttonStyle="solid">
-            <Radio.Button value="a">Open Properties</Radio.Button>
+            <Radio.Button value="a">&nbsp;Open Properties&nbsp;</Radio.Button>
             <Radio.Button value="b">Secret Properties</Radio.Button>
         </Radio.Group>
         </>

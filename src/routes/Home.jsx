@@ -9,9 +9,11 @@ import Banner from '../components/Home/Banner';
 import Phone from '../components/Home/Phone';
 import Contact from '../components/Home/Contact';
 import UserInfo from '../components/Home/UserInfo';
-import { Progress } from 'antd';
+import Progress from '../components/Home/Progress';
 
 function Home() {
+
+    const BREAK_POINT_SMALL = 576;
 
     const NDA = styled.section`
         background: #102A3E;
@@ -21,10 +23,27 @@ function Home() {
         text-align: center;
         padding: 50px 0;
         font-size: 15px;
+        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+            height: 170px;
+            font-size: 12px;
+        }
+    `
+
+    const SectionStyle = styled.section`
+        padding: 50px;
+        h1{
+            font-size: 25px;
+        }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        padding: 20px;
+        h1{
+            font-size: 25px;
+        }
+    }
     `
 
     return (
-        <div>
+        <>
             <Banner />
             <Phone />
             <UserInfo />
@@ -34,17 +53,17 @@ function Home() {
                 높은 신뢰성을 유지하기위한 KIMP의 노력으로<br/>
                 안전한 M&A 거래를 유도합니다.
             </NDA>
-            <section style={{padding: '50px'}}>
+            <SectionStyle>
                 <h1>지금, KIMP에서 인기있는 공개 매물은.</h1>
                 <SliderFour list={bestData}/>
-            </section>
+            </SectionStyle>
             <Progress/>
-            <section style={{padding: '50px'}}>
+            <SectionStyle>
                 <h1>실제로 KIMP의 회원들이 증명합니다.</h1>
                 <Review list={comment}/>
-            </section>
+            </SectionStyle>
             <Contact/>
-        </div>
+        </>
     )
 }
 

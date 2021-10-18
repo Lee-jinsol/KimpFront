@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+const BREAK_POINT_SMALL = 576;
+
 const Number = styled.div`
     border-radius: 50%;
     width: 50px;
@@ -16,6 +18,10 @@ const Number = styled.div`
         background: #fff;
         color: #102A3E;
     `}
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        width: 30px;
+        height: 30px;
+    }
 `
 
 export default Number
