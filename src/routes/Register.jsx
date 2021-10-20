@@ -2,37 +2,6 @@ import React from 'react';
 import {Form, Input, Checkbox, Button} from 'antd';
 import styled from 'styled-components';
 
-const formItemLayout = {
-  labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 8,
-    },
-  },
-  wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 16,
-    },
-  },
-};
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
-
 function Register() {
   const BREAK_POINT_LARGE = 992;
   const BREAK_POINT_MEDIUM = 768;
@@ -42,9 +11,27 @@ function Register() {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 50px;
     text-align: center;
 
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+      text-align: center;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+      text-align: center;
+    }
+  `;
+
+  const Inputform = styled.section`
+    width: 500px;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
     }
@@ -53,8 +40,14 @@ function Register() {
     }
   `;
 
-  const Inputform = styled.section`
-    width: 600px;
+  const RegisButton = styled(Button)`
+    width: 500px;
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      width: 400px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+      width: 300px;
+    }
   `;
 
   const [form] = Form.useForm();
@@ -66,7 +59,6 @@ function Register() {
   return (
     <Section>
       <Form
-        {...formItemLayout}
         layout={'vertical'}
         form={form}
         onFinish={onFinish}
@@ -173,7 +165,6 @@ function Register() {
                   : Promise.reject(new Error('서비스 이용약관 동의 해주세요.')),
             },
           ]}
-          {...tailFormItemLayout}
         >
           <Checkbox>
             서비스 이용약관 동의 (필수) <a href=""></a>
@@ -193,23 +184,22 @@ function Register() {
                     ),
             },
           ]}
-          {...tailFormItemLayout}
         >
           <Checkbox>
             개인정보 수집 이용 동의 (필수) <a href=""></a>
           </Checkbox>
         </Form.Item>
 
-        <Form.Item {...tailFormItemLayout}>
+        <Form.Item>
           <Checkbox>
             광고성 정보 수신 및 마케팅 활용 동의 (선택) <a href=""></a>
           </Checkbox>
         </Form.Item>
 
-        <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
+        <Form.Item>
+          <RegisButton type="primary" htmlType="submit" href="/Login">
             Register
-          </Button>
+          </RegisButton>
         </Form.Item>
       </Form>
     </Section>

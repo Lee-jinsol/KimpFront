@@ -7,10 +7,11 @@ function Login() {
   const BREAK_POINT_SMALL = 576;
 
   const Section = styled.section`
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    text-align: center;
   `;
 
   const Inputform = styled.section`
@@ -84,6 +85,7 @@ function Login() {
             type="primary"
             htmlType="submit"
             className="login-form-button"
+            href="/"
           >
             Log in
           </LoginButton>
