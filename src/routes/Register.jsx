@@ -3,7 +3,6 @@ import {Form, Input, Checkbox, Button} from 'antd';
 import styled from 'styled-components';
 
 function Register() {
-  const BREAK_POINT_LARGE = 992;
   const BREAK_POINT_MEDIUM = 768;
   const BREAK_POINT_SMALL = 576;
 

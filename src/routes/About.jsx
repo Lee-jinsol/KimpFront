@@ -1,12 +1,19 @@
-import React from 'react'
+import React from 'react';
+import AboutBanner from '../components/Home/AboutBanner';
+import AboutText from '../components/Home/AboutText';
 
+import styled from 'styled-components';
 
 function About() {
-    return (
-        <div>
-            어바웃페이지
-        </div>
-    )
+  return (
+    <>
+      <AboutBanner />
+      <br></br>
+      <br></br>
+
+      <AboutText />
+    </>
+  );
 }
 
-export default About
+export default About;
