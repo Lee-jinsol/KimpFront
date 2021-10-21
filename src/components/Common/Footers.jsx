@@ -1,84 +1,110 @@
 import React from 'react'
 import styled from 'styled-components';
 import Logo from './Logo';
+import { ServiceInfo, PersonInfo, AdInfo }  from '../Agreement/Info';
 
 function Footers() {
 
     const BREAK_POINT_MEDIUM = 768;
+    const BREAK_POINT_SMALL = 576;
 
     const Bottom = styled.footer`
         display : flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 20px;
+        height: 120px;
+        font-size: 10px;
         border-top: 1px solid #373737;
         box-shadow: 4px #373737;
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            display : block;
+            height: 120px;
+        }
+        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+            display: block;
         }
     `
     
     const Block = styled.div`
-    width: 100%;
-    display: block;
-    padding: 30px;
-    text-align: center;
-    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-        padding: 10px;
-    }
+        width: 100%;
+        display: block;
+        b{
+            font-size: 13px;          
+        }
+        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+            font-size: 10px;
+            b{
+                font-size: 12px;          
+            }
+        }
+    `
+    const Thired = styled.div`
+        padding-top: 10px;
+        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+            padding: 10px;
+        }
     `
 
-    const Division = styled.div`
-    display: flex;
-    text-align : left;
-    color: #A4A4A4;
-    h3{
-        color: #000;
-        margin-right: 10px;
-    }
-    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-        display : block;
-    }
-    `
     const Ul = styled.ul`
         list-style:none;
         margin: 0;
         padding: 0;
+        li{
+            color: #A4A4A4;
+            text-align : left;
+            font-size: 10px;
+            cursor:pointer;
+        }
+        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+            li{
+                font-size: 10px;
+            }
+        }
     `
+    
 
     return (
         <div>
         <Bottom>
-            <Block>
+            <Block style={{textAlign: 'center'}}>
                 <Logo /><br/>
                 Korea International M&A Platfom<br/>
-                Copyright © 2021 KIMP
+                Copyright © { new Date().getFullYear() } KIMP
             </Block>
             <Block>
-                <Division>
-                    <h3>Represent</h3> 
+                <Thired>
+                    <b>Represent</b> 
                     <Ul>
                         <li>Kiyoung Han (한기영)</li>
                     </Ul>
-                </Division>
-                <Division>
-                    <h3>Contact</h3>
-                    <Ul>
-                        <li>02-6000-5351</li>
-                        <li>010-7126-8910</li>
-                        <li>tradehelp@kita.net</li>
-                    </Ul>
-                </Division>
-                <Division>
-                    <h3>Location</h3>
+                </Thired>
+                <Thired>
+                    <b>Location</b>
                     <Ul>
                         <li>513 COEX 2 Startup Youngchi, Gangnam-gu, Seoul</li>
                         <li>서울시 강남구 영동대로 513 코엑스 2층 스타트업 브랜치</li>
                     </Ul>
-                </Division>
+                </Thired>
             </Block>
             <Block>
-                <h3>Policy</h3>
+                <Thired>
+                    <b>Contact</b>
+                    <Ul>
+                        <li>02-6000-5351 | 010-7126-8910</li>
+                        <li>tradehelp@kita.net</li>
+                    </Ul>
+                </Thired>
+                <Thired>
+                <b>Policy</b>
+                <Ul>
+                    <li>
+                        <span onClick={ServiceInfo}>서비스 이용약관 동의</span>  
+                        &nbsp;|&nbsp; 
+                        <span onClick={PersonInfo}>개인정보 수집 이용 동의</span>  
+                        &nbsp;|&nbsp;
+                        <span onClick={AdInfo}>광고성 정보 수신 및 마케팅 활용 동의</span>
+                    </li>
+                </Ul>
+                </Thired>
             </Block>
         </Bottom>
         </div>

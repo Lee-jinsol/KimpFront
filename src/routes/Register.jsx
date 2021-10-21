@@ -11,6 +11,7 @@ import {
   Button,
   AutoComplete,
 } from 'antd';
+import Center from '../components/Layout/Center';
 
 const {Option} = Select;
 
