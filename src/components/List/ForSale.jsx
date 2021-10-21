@@ -10,7 +10,7 @@ function ForSale(props) {
     const openData = props.list;
     const pageDefault = {
         min: 0,
-        max: 16
+        max: 12
     }
 
     const [Data, setData] = useState(openData);
@@ -20,12 +20,12 @@ function ForSale(props) {
         if(value === 1){
             setPageValue({
                min: 0,
-               max: 16
+               max: 12
             })
         }else{
             setPageValue({
                 min: PageValue.max,
-                max: value * 16
+                max: value * 12
              })
         }
     }
@@ -65,7 +65,7 @@ function ForSale(props) {
         <Center>
             <Pagination 
             defaultCurrent={1}
-            defaultPageSize={16}
+            defaultPageSize={12}
             onChange={(e) => handleChange(e)}
             total={Data.length} //total number of card data available
             />
