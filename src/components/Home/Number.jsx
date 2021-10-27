@@ -16,7 +16,7 @@ const Number = styled.div`
     ${props => props.white && 
         css`
         background: #fff;
-        color: #000;
+        color: #102A3E;
     `}
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
         width: 30px;

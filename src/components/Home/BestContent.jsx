@@ -3,7 +3,6 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import styled from 'styled-components'
 import CardContent from "../Common/CardContent";
-import { useScrollFadeIn } from '../../hooks'
 
 import SwiperCore, {
     Pagination
@@ -21,12 +20,6 @@ function SliderFour(props) {
         background: #102A3E;
     }
     `
-    const animatedItem = {
-        0: useScrollFadeIn('smallLeft', 1, 0.1),
-        1: useScrollFadeIn('smallLeft', 1, 0.2),
-        2: useScrollFadeIn('smallLeft', 1, 0.3),
-        3: useScrollFadeIn('smallLeft', 1, 0.4),
-    }
     
     return (
         <>
@@ -50,9 +43,9 @@ function SliderFour(props) {
             }
             }} className="mySwiper">
             {props.list && props.list.map((content, index) => (    
-                <SwiperSlide {...animatedItem[index]}>
-                    { content && <CardContent content={content} index={index} /> }
-                </SwiperSlide >
+                <SwiperSlide>
+                    { content && <CardContent content={content} index={index}/> }
+                </SwiperSlide>
             ))}
             </Slider>
       </> 

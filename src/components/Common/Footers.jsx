@@ -53,13 +53,6 @@ function Footers() {
             text-align : left;
             font-size: 10px;
             cursor:pointer;
-            span{
-                &:hover{
-                    color: #fff;
-                    background: #102A3E;
-                    transition: 0.2s all;
-                }
-            }
         }
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
             li{

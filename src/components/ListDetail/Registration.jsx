@@ -32,6 +32,10 @@ function Registration() {
                     <b>등록자</b> &nbsp;
                     <span>한기영</span>
                 </HalfArea>
+                <HalfArea>
+                    <b>Sell/Buy-side</b> &nbsp;
+                    <span>Sell</span>
+                </HalfArea>
             </FourArea>
         </div>
     )
