@@ -13,7 +13,7 @@ function CardContent({content, index}) {
         `
     return (
         <div>
-            <NavLink to={`/list/${content.name}`}>
+            <NavLink to={content.sellBuySide === 'sell' ? `/list/${content.name}`  : `/list/buy/${content.name}`}>
                 <CardSize
                 key={index}
                 hoverable

@@ -37,8 +37,8 @@ function Contact() {
         align-items: center;
         width: 200px;
         height: 200px;
-        background: #fff;
         margin: 30px;
+        background: #000;
         color: #fff;
         &::before{
             content: "";

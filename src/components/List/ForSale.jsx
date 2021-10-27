@@ -3,11 +3,14 @@ import { Col, Row, Pagination, Input } from 'antd';
 import Center from '../Layout/Center';
 import Half from '../Layout/Half';
 import CardContent from "../Common/CardContent";
+import Mark from '../Common/Mark';
 
 const { Search } = Input;
 
 function ForSale(props) {
     const openData = props.list;
+    const BuyorSell = props.text;
+
     const pageDefault = {
         min: 0,
         max: 12
@@ -29,6 +32,7 @@ function ForSale(props) {
              })
         }
     }
+    console.log(PageValue)
 
     const onSearch = (value) => {
         let arr = [];
@@ -47,7 +51,9 @@ function ForSale(props) {
     return (
         <>
         <Half>
-            <h1>KIMP의 공개 매물</h1>
+            <h1>KIMP의 &nbsp;
+                {BuyorSell === 'BUY' ? <Mark sell>{BuyorSell}</Mark>  : <Mark buy>{BuyorSell}</Mark> }
+                &nbsp; 공개 매물</h1>
             <Search 
             placeholder="Search" 
             onSearch={onSearch} 
@@ -57,7 +63,7 @@ function ForSale(props) {
         <Row gutter={[16, 16]}>
             {Data && 
             Data.slice(PageValue.min, PageValue.max).map((content, index) => (
-            <Col lg={6} md={8} xs={24}>
+            <Col lg={6} md={8} sm={12} xs={24}>
                 { content && <CardContent content={content} index={index}/> }
             </Col>
             ))}

@@ -12,17 +12,16 @@ function UserInfo() {
 
     const Needs = styled.section`
         padding: 50px;
+        // margin: 0 50px;
+        background: #EBEBEB;
         h1{
             font-size: 25px;
         }
+        img{
+            width: 500px;
+        }
         div{
-            justify-content: space-evenly;
-            img{
-                width: 100%;
-            }
-            div{
-                width: 100%;
-            }
+            width: 100%;
         }
         p{
             color: #A4A4A4;
@@ -30,6 +29,9 @@ function UserInfo() {
         }
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
             padding: 20px;
+            img{
+                width: 100%;
+            }
             p{
                 font-size: 12px;
             }
@@ -43,21 +45,24 @@ function UserInfo() {
     `
     const HalfOne = styled(Half)`
         padding-top: 20px;
-        border-bottom: 1px solid #e7e7e77e;
-        // background: #F1F1E6;
+        // border-bottom: 1px solid #A4A4A4;
     `
     const BoxOne = styled.div`
-        padding-left: 5%;
+        padding: 50px;
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            padding-left: 0;
+            padding: 0;
         }
     `
-    const HalfTwo = styled(Half)``
+    const HalfTwo = styled(Half)`
+    `
     const BoxTwo = styled.div`
         text-align: right;
         padding-right: 5%;
+        bottom: 0;
+
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
             padding-right: 0%;
+            text-align: center;
         }
     `
 

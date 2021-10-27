@@ -7,12 +7,12 @@ function Properties(props) {
     return (
         <>
         <Radio.Group defaultValue={Default} buttonStyle="solid">
-            <NavLink to="/list/open">
+            <NavLink to="/list/buy">
                 <Radio.Button value="Open Properties">
                         &nbsp;Open Properties&nbsp;
                 </Radio.Button>
             </NavLink>
-            <NavLink to="/list/sell">
+            <NavLink to="/list/secret">
             <Radio.Button value="Secret Properties">
                     Secret Properties
             </Radio.Button>
