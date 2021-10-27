@@ -11,7 +11,7 @@ function Contact() {
     padding: 50px;
     background: #102A3E;
     text-align: center;
-    h1{
+    h1{ 
         color: #fff;
     }
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
