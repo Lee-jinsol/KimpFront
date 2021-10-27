@@ -7,6 +7,7 @@ import SwiperCore, {
     Navigation
   } from 'swiper';
 import styled from 'styled-components';
+// import { useScrollFadeIn } from '../../hooks'
   
   SwiperCore.use([Navigation]);
 
@@ -34,9 +35,15 @@ function Review(props) {
         height: 470px;
     }
     `
+    // const animatedItem = {
+    //     0: useScrollFadeIn('left', 1, 0.1),
+    //     1: useScrollFadeIn('left', 1, 0.3),
+    // }
+
     const stars = (data) => [
         <Rate disabled defaultValue={data} />
     ]
+    
 
     return (
         <>

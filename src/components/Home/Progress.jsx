@@ -3,21 +3,44 @@ import styled from 'styled-components'
 import ProgressImg from '../../image/ProgressImg.jpg';
 import Half from '../Layout/Half';
 import Number from '../Home/Number';
+import { useScrollClipPath, useScrollFadeIn } from '../../hooks'
 
 function Progress() {
     const BREAK_POINT_EXTRA_LARGE = 1200;
     const BREAK_POINT_LARGE = 992;
     const BREAK_POINT_SMALL = 576;
 
+    // const Img = {
+    //     backgroundImage: `url(${ProgressImg})`,
+    //     filter: `brightness(60%)`,
+    //     backgroundRepeat: 'no-repeat',
+    //     backgroundSize: 'cover',
+    // }
+
     const Reason =  styled.section`
         padding: 50px;
         background: #102A3E;
+        position: relative;
         h1{
             color: #fff;
+            // color: #000;
         }
         img{
             width: 100%;
             height: 500px;
+        }
+        &::before{
+            content: "";
+            // background: url(${ProgressImg});
+            // background: url(https://images.unsplash.com/photo-1591076787947-aaa4dec435d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
+            background: url(https://images.pexels.com/photos/934456/pexels-photo-934456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            background-size: cover;
+            opacity: 0.5;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
         }
         @media only screen and (max-width: ${BREAK_POINT_EXTRA_LARGE}px) {
            img{
@@ -34,7 +57,7 @@ function Progress() {
             color: #fff;
         }
         p{
-            color: #A4A4A4;
+            color: #C9C9C9;
         }
     `
 
@@ -49,37 +72,48 @@ function Progress() {
     
 
     const Line = styled.div`
-        border-left: 1px solid white; 
+        border-left: 1px solid #fff;
         height: 40px;
         margin: 20px;
         @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
             display: none;
         }
     `
+    const animatedImage = useScrollClipPath('right', 1, 0.5);
+    const animatedItem = {
+        0: useScrollFadeIn('up', 1, 0),
+        1: useScrollFadeIn('smallLeft', 1, 0.1),
+        2: useScrollFadeIn('smallLeft', 1, 0.2),
+        3: useScrollFadeIn('smallLeft', 1, 0.3),
+        4: useScrollFadeIn('smallLeft', 1, 0.4),
+        5: useScrollFadeIn('smallLeft', 1, 0.5),
+    };
 
     return (
         <>
             <Reason>
-                <h1>KIMP에서 M&A를 진행해야 하는 이유</h1>
+                <h1 {...animatedItem[0]}>
+                    KIMP에서 M&A를 진행해야 하는 이유
+                </h1>
                 <Half>
                     <Block>
-                        <Division>
+                        <Division {...animatedItem[1]}>
                         <Number white>1</Number>
                         <div style={{paddingLeft: '30px'}}>
                             <h2>안전한 정보공유</h2>
                             <p>한국무역협회에서 분사한 M&A플랫폼</p>
                         </div>
                         </Division>
-                        <Line />
-                        <Division>
+                        <Line {...animatedItem[2]}/>
+                        <Division {...animatedItem[3]}>
                         <Number white>2</Number>
                         <div style={{paddingLeft: '30px'}}>
                             <h2>다양한 매물</h2>
                             <p>M&A 생태계 다양한 관계자들을 포용</p>
                         </div>
                         </Division>
-                        <Line />
-                        <Division>
+                        <Line {...animatedItem[4]}/>
+                        <Division {...animatedItem[5]}>
                         <Number white>3</Number>
                         <div style={{paddingLeft: '30px'}}>
                             <h2>딱맞는 연결</h2>
@@ -87,7 +121,7 @@ function Progress() {
                         </div>
                         </Division>
                     </Block>
-                    <img src={ProgressImg} alt="progress"/>
+                    <img src="https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="progress" {...animatedImage}/>
                 </Half>
             </Reason>
         </>

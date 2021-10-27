@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PhoneFilled } from '@ant-design/icons';
+import { useScrollFadeIn } from '../../hooks'
 
 function Phone() {
     
@@ -55,12 +56,16 @@ function Phone() {
             text-align: center;
         }
     `
+    const animatedItem = {
+        0: useScrollFadeIn('down', 1, 1.5),
+        1: useScrollFadeIn('down', 1, 2.0),
+    }
 
     return (
         <>
         <Section>
-            <p>M&A Free family business succession consulting</p>
-            <p><PhoneIcon/> &nbsp; <b>02-6000-5351</b></p>
+            <p {...animatedItem[0]}>M&A Free family business succession consulting</p>
+            <p {...animatedItem[1]}><PhoneIcon/> &nbsp; <b>02-6000-5351</b></p>
         </Section>
         </>
     )

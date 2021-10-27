@@ -11,6 +11,8 @@ import Contact from '../components/Home/Contact';
 import UserInfo from '../components/Home/UserInfo';
 import Progress from '../components/Home/Progress';
 
+import { useScrollFadeIn } from '../hooks'
+
 function Home() {
 
     const BREAK_POINT_SMALL = 576;
@@ -42,24 +44,32 @@ function Home() {
     }
     `
 
+    const animatedItem = {
+        0: useScrollFadeIn('down', 1, 0.2),
+        1: useScrollFadeIn('up', 1, 0.4),
+        2: useScrollFadeIn('up', 1, 0.2),
+    }
+
     return (
         <>
             <Banner />
             <Phone />
             <UserInfo />
             <NDA>
-                KIMP의 모든 사용자는<br/>
-                NDA계약 사전체결, 매수자 정보확인절차를 거칩니다.<br/>
-                높은 신뢰성을 유지하기위한 KIMP의 노력으로<br/>
-                안전한 M&A 거래를 유도합니다.
+                <div {...animatedItem[0]}>
+                    KIMP의 모든 사용자는<br/>
+                    NDA계약 사전체결, 매수자 정보확인절차를 거칩니다.<br/>
+                    높은 신뢰성을 유지하기위한 KIMP의 노력으로<br/>
+                    안전한 M&A 거래를 유도합니다.
+                </div>
             </NDA>
             <SectionStyle>
-                <h1>지금, KIMP에서 인기있는 공개 매물은.</h1>
-                <SliderFour list={bestData}/>
+                <h1 {...animatedItem[1]}>지금, KIMP에서 인기있는 공개 매물은.</h1>
+                <SliderFour list={bestData} />
             </SectionStyle>
             <Progress/>
             <SectionStyle>
-                <h1>실제로 KIMP의 회원들이 증명합니다.</h1>
+                <h1 {...animatedItem[2]}>실제로 KIMP의 회원들이 증명합니다.</h1>
                 <Review list={comment}/>
             </SectionStyle>
             <Contact/>
