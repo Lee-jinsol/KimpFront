@@ -1,12 +1,11 @@
 import React from 'react'
-import ForSale from '../components/List/ForSale';
-import { openData } from '../data/openData';
-import Center from '../components/Layout/Center';
-import Properties from '../components/List/Properties';
+import Center from '../../components/Layout/Center';
+import Properties from '../../components/List/Properties';
+import ForSale from '../../components/List/ForSale';
 import styled from 'styled-components'
+import { SellOpen } from '../../data/SellOpen';
 
-function List() {
-
+function Open() {
     const BREAK_POINT_SMALL = 576;
 
     const ListSection = styled.section`
@@ -19,13 +18,13 @@ function List() {
     return (
         <div style={{paddingTop: '20px'}}>
             <Center>
-                <Properties/>
+                <Properties default={'Open Properties'}/>
             </Center>
             <ListSection>
-                <ForSale list={openData}/>
+                <ForSale list={SellOpen} text={'SELL'}/>
             </ListSection>
         </div>
     )
 }
 
-export default List
+export default Open

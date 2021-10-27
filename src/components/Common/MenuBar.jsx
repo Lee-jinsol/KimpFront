@@ -9,7 +9,7 @@ function MenuBar() {
     const BREAK_POINT_MEDIUM = 768;
 
     const Menu = styled.header`
-        position:sticky;
+        postion: relative;
         top:0;
         z-index: 90;
         box-shadow: 0 0 4px #373737;
@@ -26,16 +26,16 @@ function MenuBar() {
                 padding: 0;
                 margin: 0;
                 list-style: none;
-                background: #fff;
+                // background: #fff;
                 z-index: 99;
                 li{
                     float: left;
-                    padding: 10px 20px;
+                    padding: 10px;  
                     &:hover{
                         div{
                             visibility: visible;
                             ul{
-                                width: 120px;
+                                float: left;
                             }
                         }
                     }
@@ -68,13 +68,14 @@ function MenuBar() {
                     .active{
                         background: #102A3E;
                         color: #fff;
+                        width: 100%
                     }
                 }
             }
         }
 
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            height: 105px;
+            height:  90px;
             display : block;
             line-height: 30px;
             background: #fff;
@@ -88,8 +89,9 @@ function MenuBar() {
                 transition: all 0.3s;
                 li{
                     width: 100%;
+                    
                     text-align: center;
-                    background: #e7e7e77e;
+                    background: #EBEBEB;
                     &:hover{
                         div{
                             ul{
@@ -108,16 +110,20 @@ function MenuBar() {
             .mobile {
                 ul{
                     visibility: visible;
-                    opacity: 0.9;
+                    opacity: 1;
                     height: 100%; 
-                    // background: linear-gradient(180deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
                     li{
                         width: 100%;
                         z-index: 99;
                         &:hover{
                             div{
+                                margin-top: 10px;
                                 ul{
                                     display: block;
+                                    li{
+                                        background: #CECECE;
+                                        color: #102A3E;
+                                    }
                                 }
                             }
                         }
@@ -140,18 +146,15 @@ function MenuBar() {
 
     const SubMenu = styled.div`
         cursor: pointer;
-        position: absolute;
-        width: 120px;
         visibility: hidden;
-        line-height: 30px;
+        position: absolute;
+        background: #fff;
+        width: 140px;
+        
         ul{
-            display: flex;
-            width: 100%;
             li{
-                padding: 0;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
+                display: block;
+                line-height: 30px;
                 &:hover{
                     .line{
                         transform: rotate(-90deg);
@@ -164,27 +167,39 @@ function MenuBar() {
             }
         }
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            position:sticky;
+            position: static;
             width: 100%;
         }
     `
     const DownMenu = styled.div`
         display: none;
-        width: 100px;
+        float: left;
+        text-align: center;
         ul{
+            background: #EBEBEB;
             li{ 
-                padding: 0;
-                background: #e7e7e77e;
-                &:hover{
-                    background: #102A3E;
-                    color: #fff;
-                }
+                width: 100%;
             }
         }
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
             width: 100%;
+            position: static;
         }
     `
+    // const DropDown = styled.div`
+    // position: absolute;
+    // top: 30px;
+    // background: #fff;
+    // visibility: hidden;
+    // ul{
+    //     li{
+    //         a{
+    //             display: block;
+    //             line-height: 30px;
+    //         }
+    //     }
+    // }
+    // `
 
 
     const [click, setClick] = useState(false);
@@ -197,33 +212,53 @@ function MenuBar() {
                 <Logo/>
                 <nav className={click ? "mobile" : "nav-menu"}>
                     <ul>
-                    <li><NavLink to="/list">M & A List</NavLink>
+                    <li><NavLink to="/list">M & A List</NavLink> 
                             <SubMenu>
                                 <ul>
                                     <li>
-                                        Sell
-                                        <DownOutlined className="line" />
+                                        SELL<DownOutlined className="line" /><br/>
                                         <DownMenu>
                                             <ul>
-                                                <li>Open</li>
-                                                <li>Secret</li>
+                                                <li><NavLink to="/list/open">Open</NavLink></li>
+                                                <li><NavLink to="/list/sell">Secret</NavLink></li>
                                             </ul>
                                         </DownMenu>
                                     </li>
                                     <br/>
                                     <li>
-                                        Buy
-                                        <DownOutlined className="line" />
+                                        
+                                        BUY<DownOutlined className="line" /><br/>
                                         <DownMenu>
                                             <ul>
-                                                <li>Open</li>
-                                                <li>Secret</li>
+                                                <li><NavLink to="/list/buy">Open</NavLink></li>
+                                                <li><NavLink to="/list/secret">Secret</NavLink></li>
                                             </ul>
                                         </DownMenu>
                                     </li>
                                 </ul>
                             </SubMenu>
                         </li>
+                        
+                        {/* <li><NavLink to="/list">
+                            Sell List
+                            <DropDown>
+                                <ul>
+                                    <li><NavLink to="/list">Open</NavLink></li>
+                                    <li><NavLink to="/buy/open">Secret</NavLink></li>
+                                </ul>
+                            </DropDown>
+                            </NavLink>
+                        </li>
+                        <li><NavLink to="/buy/open">
+                            Buy List
+                            <DropDown>
+                                <ul>
+                                    <li><NavLink to="/buy/open">Open</NavLink></li>
+                                    <li><NavLink to="/buy/open">Secret</NavLink></li>
+                                </ul>
+                            </DropDown>
+                            </NavLink>
+                        </li> */}
                         <li><NavLink to="/aboutUs">About Us</NavLink></li>
                         <li><NavLink to="/logIn">Log In</NavLink></li>
                         <li><NavLink to="/register">Register</NavLink></li>

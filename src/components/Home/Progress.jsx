@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import ProgressImg from '../../image/ProgressImg.jpg';
 import Half from '../Layout/Half';
 import Number from '../Home/Number';
 import { useScrollClipPath, useScrollFadeIn } from '../../hooks'
@@ -11,20 +10,19 @@ function Progress() {
     const BREAK_POINT_SMALL = 576;
 
     const Reason =  styled.section`
-        padding: 50px;
+        padding: 30px;
         background: #102A3E;
         position: relative;
+        height: 550px;
         h1{
             color: #fff;
         }
         img{
-            width: 100%;
+            // width: 100%;
             height: 500px;
         }
         &::before{
             content: "";
-            // background: url(${ProgressImg});
-            // background: url(https://images.unsplash.com/photo-1591076787947-aaa4dec435d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
             background: url(https://images.pexels.com/photos/934456/pexels-photo-934456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
             background-size: cover;
             opacity: 0.5;
@@ -41,6 +39,10 @@ function Progress() {
         }
         @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
             padding: 20px;
+            height: 100%;
+            img{
+                display: none;
+            }
         }
     `
         const Division = styled.div`
@@ -56,7 +58,7 @@ function Progress() {
     const Block = styled.div`
         width: 100%;
         display: block;
-        padding: 50px;
+        padding: 20px;
         @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
             padding: 0;
         }
