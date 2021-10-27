@@ -1,8 +1,7 @@
 import React from 'react'
 import Center from '../Layout/Center'
-import styled from 'styled-components'
-import { SolutionOutlined, EnvironmentOutlined, DollarOutlined } from '@ant-design/icons';
-
+import styled, { css } from 'styled-components'
+import { FilePdfOutlined, AuditOutlined, SolutionOutlined, EnvironmentOutlined, DollarOutlined } from '@ant-design/icons';
 const SecondArea = styled.div`
     // background: yellow;
     width: 100%;
@@ -21,6 +20,12 @@ const Info = styled.div`
     b{
         font-size: 20px;
     }
+    ${props => props.red && 
+        css`
+        background: #7B2A2A;
+        color: #fff;
+        `
+    }
 `
 const Icon = styled.div`
 font-size: 30px;
@@ -31,6 +36,13 @@ function ContentArea() {
         <div>
         <SecondArea>
             <Align>
+                <Info red>
+                    <b>매도</b>
+                    <Icon>
+                        <AuditOutlined />
+                    </Icon>
+                    <p>Sell</p>
+                </Info>
                 <Info>
                     <b>산업 업종</b>
                     <Icon>
@@ -51,6 +63,13 @@ function ContentArea() {
                         <DollarOutlined />
                     </Icon>
                     <p>~2,000</p>
+                </Info>
+                <Info>
+                    <b>회사 명세서</b>
+                    <Icon>
+                        <FilePdfOutlined />
+                    </Icon>
+                    <p>회사 명세서.pdf</p>
                 </Info>
             </Align>
             </SecondArea>

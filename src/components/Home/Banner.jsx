@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import mainImg from '../../image/MainImg.png';
+import { useScrollFadeIn } from '../../hooks'
 
 const BREAK_POINT_MEDIUM = 768;
-// const BREAK_POINT_SMALL = 576;
 
 const BulidingImg = {
     backgroundImage: `url(${mainImg})`,
@@ -68,24 +68,29 @@ function Banner() {
             font-size: 12px;
         }
     `
-
+    const animatedItem = {
+        0: useScrollFadeIn('left', 1, 0),
+        1: useScrollFadeIn('left', 1, 0.5),
+        2: useScrollFadeIn('up', 1, 0.7),
+        3: useScrollFadeIn('right', 1, 1.0),
+    };
 
     return (
         <>
             <Section style={BulidingImg}>
-                <D1>
+                <D1 {...animatedItem[0]}>
                     Safe Process of M&A, <br/>
                     We will DO BEST <br/>
                     for your BUSINESS.
                 </D1>
-                <D2>
+                <D2 {...animatedItem[1]}>
                     <b>K</b>orea <br/>
                     <b>I</b>nternational <br/>
                     <b>M</b>&A  <br/>
                     <b>P</b>latform  <br/><br/>
-                    <h1>KIMP</h1>
+                    <h1 {...animatedItem[2]}>KIMP</h1>
                 </D2>
-                <D3>
+                <D3 {...animatedItem[3]}>
                 M&A 중개 및 사업승계 컨설팅 서비스를 제공하는 KIMP.<br/>
                 어렵기만한 M&A, KIMP가 해결해 드립니다. <br/>
                 한국무역협회 산하의 KIMP에서 안전한 M&A 바로 시작하세요.
