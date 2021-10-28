@@ -52,9 +52,9 @@ function AboutBanner() {
   const Box = styled.div`
     top: 90%;
     font-size: 20px;
-    box-shadow: 10px 10px 10px grey;
+    box-shadow: 3px 5px 4px grey;
     z-index: 1;
-    height: 100px;
+    height: 150px;
     width: 60%;
     left: 50%;
     transform: translateX(-50%);
