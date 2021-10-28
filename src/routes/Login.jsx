@@ -1,45 +1,100 @@
 import {Form, Input, Button} from 'antd';
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import styled from 'styled-components';
+import Center from '../components/Layout/Center'
+import Half from '../components/Layout/Half'
+import { NavLink } from "react-router-dom";
 
 function Login() {
+  const BREAK_POINT_LARGE = 992;
   const BREAK_POINT_MEDIUM = 768;
   const BREAK_POINT_SMALL = 576;
 
+  const LoginArea = styled(Center)`
+    padding: 30px;
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      padding: 100px;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+      padding: 120px;
+    }
+    
+  `
+  const Line = styled(Half)`
+    border: 1px solid #e4e4e4;
+    border-radius: 30px;
+    box-shadow: 1px 1px 1px 1px #e4e4e4;
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      img{
+        display: none;
+      }
+    }
+
+  `
+
   const Section = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    display: block;
+    padding: 30px;
     text-align: center;
+    span{
+      cursor: pointer;
+      &:hover{
+        border-bottom: 1px solid #102A3E;
+        transition: all 2s;
+      }
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        padding: 0;
+        span{
+          font-size: 12px;
+        }
+    }
   `;
 
   const Inputform = styled.section`
-    width: 500px;
+    width: 400px;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
     }
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-      width: 300px;
+      width: 200px;
     }
   `;
 
   const LoginButton = styled(Button)`
-    width: 500px;
+    width: 400px;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
     }
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-      width: 300px;
+      width: 200px;
     }
   `;
+
+  const Find = styled.div`
+  cursor: pointer;
+    span{
+      font-size: 12px;
+      color: #A4A4A4;
+      &:hover{
+        background: #102A3E;
+        color: #fff;
+      }
+    }
+  `
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
 
   return (
-    <Section>
+    <LoginArea>
+      <Line>
+      <img src="https://images.unsplash.com/photo-1519332978332-21b7d621d05e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="" />   
+      <Section>
       <Form
         name="normal_login"
         className="login-form"
@@ -89,13 +144,19 @@ function Login() {
           >
             Log in
           </LoginButton>
-
-          <br></br>
-          <br></br>
-          <a href="Register">잠깐! 아직 회원가입을 하지 않으셨나요?</a>
         </Form.Item>
       </Form>
-    </Section>
+      <div>
+        <span> <NavLink to="/register">잠깐! 아직 회원가입을 하지 않으셨나요?</NavLink></span>
+        <Find>
+        <span>아이디 찾기</span>  
+        <span>&nbsp;|&nbsp;</span> 
+        <span>비밀번호 찾기</span>
+        </Find>
+      </div>
+      </Section>
+      </Line>
+    </LoginArea>
   );
 }
 export default Login;
