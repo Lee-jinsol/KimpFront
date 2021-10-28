@@ -4,14 +4,14 @@ import styled from 'styled-components';
 function AboutText() {
   const Section = styled.section`
     position: relative;
-    padding: 20px;
+    padding-top: 50px;
     p {
+      height: 550px;
       color: black;
       font-weight: bold;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 30px;
       text-align: center;
     }
   `;
