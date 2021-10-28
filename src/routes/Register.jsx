@@ -2,7 +2,7 @@ import React from 'react';
 import {Form, Input, Checkbox, Button} from 'antd';
 import styled from 'styled-components';
 
-function Register() {
+function Register(props) {
   const BREAK_POINT_MEDIUM = 768;
   const BREAK_POINT_SMALL = 576;
 
@@ -53,6 +53,7 @@ function Register() {
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    props.history.push('/login');
   };
 
   return (
@@ -196,7 +197,7 @@ function Register() {
         </Form.Item>
 
         <Form.Item>
-          <RegisButton type="primary" htmlType="submit" href="/Login">
+          <RegisButton type="primary" htmlType="submit">
             Register
           </RegisButton>
         </Form.Item>
