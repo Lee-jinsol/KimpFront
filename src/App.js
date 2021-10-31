@@ -16,7 +16,7 @@ import BuyDetail from './routes/buy/Detail'
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={'/build'}>
       <MenuBar/>
       <div className="content">
       <Switch>
