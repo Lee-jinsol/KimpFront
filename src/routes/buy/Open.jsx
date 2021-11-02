@@ -1,6 +1,6 @@
 import React from 'react'
 import Center from '../../components/Layout/Center';
-import Properties from '../../components/Buy/Properties';
+// import Properties from '../../components/Buy/Properties';
 import ForSale from '../../components/List/ForSale';
 import styled from 'styled-components'
 import { BuyOpen } from '../../data/BuyOpen';
@@ -17,9 +17,9 @@ function Open() {
 
     return (
         <div style={{paddingTop: '20px'}}>
-            <Center>
+            {/* <Center>
                 <Properties default={'Open Properties'}/>
-            </Center>
+            </Center> */}
             <ListSection>
                 <ForSale list={BuyOpen} text={'BUY'}/>
             </ListSection>

@@ -17,7 +17,7 @@ function Review(props) {
     const BREAK_POINT_SMALL = 576;
 
     const Slider = styled(Swiper)`
-    height: 350px;
+    height: 270px;
     .swiper-button-prev, .swiper-button-next{
         color: #102A3E;
     }
@@ -25,18 +25,18 @@ function Review(props) {
         background: #102A3E;
     }
     @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
-        height: 400px;
-    }
-    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
         height: 350px;
     }
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+        height: 270px;
+    }
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-        height: 470px;
+        height: 350px;
     }
     `
-    const stars = (data) => [
-        <Rate disabled defaultValue={data} />
-    ]
+    // const stars = (data) => [
+    //     <Rate disabled defaultValue={data} />
+    // ]
 
     return (
         <>
@@ -69,8 +69,8 @@ function Review(props) {
             <SwiperSlide style={{padding: '20px'}} key={index}>
                 <Card hoverable>
                 <Comment
-                actions={stars(content.rate)}
-                author={<p>{content.name} 님의 작성 </p>}
+                // actions={stars(content.rate)}
+                author={<p>{content.name} </p>}
                 content={
                     <p>{content.description}</p>
                 }

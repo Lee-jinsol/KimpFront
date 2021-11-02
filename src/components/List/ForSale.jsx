@@ -60,7 +60,7 @@ function ForSale(props) {
             style={{ width: 200 }}  
             enterButton allowClear />
         </Half>
-        <Row gutter={[16, 16]}>
+        <Row gutter={[30, 30]}>
             {Data && 
             Data.slice(PageValue.min, PageValue.max).map((content, index) => (
             <Col lg={6} md={8} sm={12} xs={24}>

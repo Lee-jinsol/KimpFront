@@ -37,7 +37,7 @@ function Progress() {
             height: 300px;
            } 
         }
-        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
             padding: 20px;
             height: 100%;
             img{

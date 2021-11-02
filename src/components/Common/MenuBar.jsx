@@ -30,7 +30,7 @@ function MenuBar() {
                 z-index: 99;
                 li{
                     float: left;
-                    padding: 10px;  
+                    margin: 10px;  
                     &:hover{
                         div{
                             visibility: visible;
@@ -59,6 +59,13 @@ function MenuBar() {
                           }
                         &:hover{
                             color: #fff;
+                             .line{
+                                transform: rotate(-90deg);
+                                transition: transform .5s;
+                            }
+                            div{
+                                display: block;
+                            }
                         }
                         &:hover::after {
                             transform: scaleY(1);
@@ -75,9 +82,8 @@ function MenuBar() {
         }
 
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            height:  90px;
+            height:  95px;
             display : block;
-            line-height: 30px;
             background: #fff;
             ul{
                 flex-direction: column;
@@ -115,6 +121,8 @@ function MenuBar() {
                     li{
                         width: 100%;
                         z-index: 99;
+                        margin: 0;
+                        line-height: 50px;
                         &:hover{
                             div{
                                 margin-top: 10px;
@@ -155,15 +163,15 @@ function MenuBar() {
             li{
                 display: block;
                 line-height: 30px;
-                &:hover{
-                    .line{
-                        transform: rotate(-90deg);
-                        transition: transform .5s;
-                    }
-                    div{
-                        display: block;
-                    }
-                }
+                // &:hover{
+                //     .line{
+                //         transform: rotate(-90deg);
+                //         transition: transform .5s;
+                //     }
+                //     div{
+                //         display: block;
+                //     }
+                // }
             }
         }
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
@@ -186,20 +194,7 @@ function MenuBar() {
             position: static;
         }
     `
-    // const DropDown = styled.div`
-    // position: absolute;
-    // top: 30px;
-    // background: #fff;
-    // visibility: hidden;
-    // ul{
-    //     li{
-    //         a{
-    //             display: block;
-    //             line-height: 30px;
-    //         }
-    //     }
-    // }
-    // `
+
 
 
     const [click, setClick] = useState(false);
@@ -212,32 +207,18 @@ function MenuBar() {
                 <Logo/>
                 <nav className={click ? "mobile" : "nav-menu"}>
                     <ul>
-                    <li><NavLink to="/list">M & A List</NavLink> 
-                            <SubMenu>
-                                <ul>
-                                    <li>
-                                        SELL<DownOutlined className="line" /><br/>
-                                        <DownMenu>
-                                            <ul>
-                                                <li><NavLink to="/list/open">Open</NavLink></li>
-                                                <li><NavLink to="/list/sell">Secret</NavLink></li>
-                                            </ul>
-                                        </DownMenu>
-                                    </li>
-                                    <br/>
-                                    <li>
-                                        
-                                        BUY<DownOutlined className="line" /><br/>
-                                        <DownMenu>
-                                            <ul>
-                                                <li><NavLink to="/list/buy">Open</NavLink></li>
-                                                <li><NavLink to="/list/secret">Secret</NavLink></li>
-                                            </ul>
-                                        </DownMenu>
-                                    </li>
-                                </ul>
-                            </SubMenu>
+                    <li><NavLink to="/list">
+                            Sell List
+                            &nbsp;<DownOutlined className="line" />
+                        </NavLink>
+                        <SubMenu>
+                            <ul>
+                                <li><NavLink to="/list/open">공개정보</NavLink></li>
+                                <li><NavLink to="/list/secret">비공개정보</NavLink></li>
+                            </ul>
+                        </SubMenu>
                         </li>
+                    <li><NavLink to="/buy">Buy List</NavLink></li> 
                         
                         {/* <li><NavLink to="/list">
                             Sell List

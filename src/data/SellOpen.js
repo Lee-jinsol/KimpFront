@@ -53,7 +53,8 @@ const SellOpen = [
         updatedat: '2021.09.30',
         lastmodifiedat: '2021.10.04',
         user: '한기영',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 5
     },
     {
         image: `${img2}`,
@@ -73,7 +74,8 @@ const SellOpen = [
         updatedat: '2021.09.30',
         lastmodifiedat: '2021.09.30',
         user: '한기영',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 1
     },
     {
         image: `${img3}`,
@@ -93,7 +95,8 @@ const SellOpen = [
         updatedat: '2021.09.29',
         lastmodifiedat: '2021.09.30',
         user: '이은솔',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 5
     },
     {
         image: `${img4}`,
@@ -113,7 +116,8 @@ const SellOpen = [
         updatedat: '2021.09.28',
         lastmodifiedat: '2021.09.28',
         user: '이진솔',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 10
     },
     {
         image: `${img5}`,
@@ -133,7 +137,8 @@ const SellOpen = [
         updatedat: '2021.09.27',
         lastmodifiedat: '2021.09.27',
         user: '이은솔',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img6}`,
@@ -153,7 +158,8 @@ const SellOpen = [
         updatedat: '2021.09.22',
         lastmodifiedat: '2021.09.23',
         user: '이예지',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 15
     },
     {
         image: `${img7}`,
@@ -173,7 +179,8 @@ const SellOpen = [
         updatedat: '2021.09.21',
         lastmodifiedat: '2021.09.21',
         user: '이진솔',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 22
     },
     {
         image: `${img8}`,
@@ -193,7 +200,8 @@ const SellOpen = [
         updatedat: '2021.09.20',
         lastmodifiedat: '2021.09.21',
         user: '한기영',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 25
     },
     {
         image: `${img9}`,
@@ -213,7 +221,8 @@ const SellOpen = [
         updatedat: '2021.09.19',
         lastmodifiedat: '2021.09.19',
         user: '이예지',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 19
     },
     {
         image: `${img10}`,
@@ -233,7 +242,8 @@ const SellOpen = [
         updatedat: '2021.09.19',
         lastmodifiedat: '2021.09.19',
         user: '이예지',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 22
     },
     {
         image:`${img11}`,
@@ -253,7 +263,8 @@ const SellOpen = [
         updatedat: '2021.09.29',
         lastmodifiedat: '2021.09.30',
         user: '이은솔',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 45
     },
     {
         image: `${img12}`,
@@ -273,7 +284,8 @@ const SellOpen = [
         updatedat: '2021.09.18',
         lastmodifiedat: '2021.09.18',
         user: '한기영',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 23
     },
     // Buy
     {
@@ -282,7 +294,8 @@ const SellOpen = [
         location: '대한민국 서울시 영등포구',
         sales: '~1,500',
         details: '신세대 금융권 시가총액 10억 돌파한 신생 금융 회사',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 25
     },
     {
         image: `${img22}`,
@@ -290,7 +303,8 @@ const SellOpen = [
         location: '대한민국 서울시 종로구',
         sales: '~14,000',
         details: '국내 최대 안심그룹의 보험계열사',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 27
     },
     {
         image: `${img23}`,
@@ -298,7 +312,8 @@ const SellOpen = [
         location: '대한민국 서울시 송파구',
         sales: '~6,000',
         details: '카드 수수료 담당 C to C 기업.',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 4
     },
     {
         image: `${img24}`,
@@ -306,7 +321,8 @@ const SellOpen = [
         location: '일본 오사카시 조토구',
         sales: '~10,000',
         details: '한국걸설 일본지사. 한국 1위 건설업체의 일본 지사',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 21
     },
     {
         image: `${img25}`,
@@ -314,7 +330,8 @@ const SellOpen = [
         location: '대한민국 경기도 부천시',
         sales: '~5,000',
         details: '부천시 인테리어 디자이너 사무소. 디자이너 3명 보유',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img26}`,
@@ -322,7 +339,8 @@ const SellOpen = [
         location: '일본 도쿄도 교토구',
         sales: '~3,000',
         details: '일본식 스트릿 의류 업체. 누적 판매량 150만 돌파',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img27}`,
@@ -330,7 +348,8 @@ const SellOpen = [
         location: '미국 미네소타주 멜러린',
         sales: '~6,500',
         details: '미국 패션 스트릿의 디자이너 브랜드',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img28}`,
@@ -338,7 +357,8 @@ const SellOpen = [
         location: '미국 뉴욕시 스탠튼아일랜드',
         sales: '~7,900',
         details: '뉴욕의 디자이너 상 수상자 팰리슨의 뉴 브랜드',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img29}`,
@@ -346,7 +366,8 @@ const SellOpen = [
         location: '대한민국 인천광역시 중구',
         sales: '~10,000',
         details: '직원수 120명의 최다 인원 유통업',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img30}`,
@@ -354,7 +375,8 @@ const SellOpen = [
         location: '대한민국 경상남도 부산광역시',
         sales: '~5,900',
         details: '해산물 포장 및 유통까지 한번에 담당하는 전국 해산 물산 기업',
-        sellBuySide:'sell'
+        sellBuySide:'sell',
+        count: 20
     },
     {
         image: `${img31}`,

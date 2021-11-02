@@ -10,7 +10,6 @@ import Sell from './routes/sell/Open'
 import SellSecret from './routes/sell/Secret'
 import SellDetail from './routes/sell/Detail'
 import Buy from './routes/buy/Open'
-import BuySecret from './routes/buy/Secret'
 import BuyDetail from './routes/buy/Detail'
 
 function App() {
@@ -22,11 +21,10 @@ function App() {
       <Switch>
           <Route exact path="/list" component={Sell}/>
           <Route exact path="/list/open" component={Sell}/>
-          <Route exact path="/list/sell" component={SellSecret}/>
-          <Route exact path="/list/buy" component={Buy}/>
-          <Route exact path="/list/secret" component={BuySecret}/>
+          <Route exact path="/list/secret" component={SellSecret}/>
           <Route exact path="/list/:name" component={SellDetail}/>
-          <Route exact path="/list/buy/:name" component={BuyDetail}/>
+           <Route exact path="/buy" component={Buy}/>
+          <Route exact path="/buy/:name" component={BuyDetail}/>
           <Route exact path="/aboutUs" component={About}/>
           <Route exact path="/logIn" component={Login} />
           <Route exact path="/register" component={Register} />

@@ -26,7 +26,8 @@ const BuyOpen = [
         updatedat: '2021.09.10',
         lastmodifiedat: '2021.09.10',
         user: '한기영',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 20
     },
     {
         image:`${img14}`,
@@ -46,7 +47,8 @@ const BuyOpen = [
         updatedat: '2021.09.10',
         lastmodifiedat: '2021.09.12',
         user: '이은솔',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 22
     },
     {
         image: `${img15}`,
@@ -66,7 +68,8 @@ const BuyOpen = [
         updatedat: '2021.09.08',
         lastmodifiedat: '2021.09.08',
         user: '이에지',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 10
     },
     {
         image: `${img16}`,
@@ -86,7 +89,8 @@ const BuyOpen = [
         updatedat: '2021.09.08',
         lastmodifiedat: '2021.09.08',
         user: '',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 2
     },
     {
         image: `${img17}`,
@@ -94,7 +98,8 @@ const BuyOpen = [
         location: '대한민국 서울시 종로구',
         sales: '~5,000',
         details: '컴퓨터 교육학원, 전국 100개 이상의 지점 보유',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 5
     },
     {
         image: `${img18}`,
@@ -102,7 +107,8 @@ const BuyOpen = [
         location: '일본 도쿄도 스미다구',
         sales: '~11,000',
         details: '일본 전기회사. 한국 지사 진출을 목표로 하고있음',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 15
     },
     {
         image: `${img19}`,
@@ -110,7 +116,8 @@ const BuyOpen = [
         location: '대한민국 서울시 광진구',
         sales: '~23,000',
         details: '신재생 에너지 개발을 위한 신생기업',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 27
     },
     {
         image: `${img20}`,
@@ -118,7 +125,8 @@ const BuyOpen = [
         location: '대한민국 대전 서구 둔산동',
         sales: '~23,000',
         details: '전기 배터리 공장으로 하루 10만애딍 부품 생산, 삼성전자 협력업체',
-        sellBuySide:'buy'
+        sellBuySide:'buy',
+        count: 15
     },
 ]
 
