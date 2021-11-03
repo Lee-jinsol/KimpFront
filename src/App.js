@@ -2,15 +2,15 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import MenuBar from './components/Common/MenuBar'
 import Footers from './components/Common/Footers';
-import Home from './routes/Home'
-import About from './routes/About';
-import Register from './routes/Register';
-import Login from './routes/Login';
-import Sell from './routes/sell/Open'
-import SellSecret from './routes/sell/Secret'
-import SellDetail from './routes/sell/Detail'
-import Buy from './routes/buy/Open'
-import BuyDetail from './routes/buy/Detail'
+import Home from './pages/Home'
+import About from './pages/About';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Sell from './pages/sell/Open'
+import SellSecret from './pages/sell/Secret'
+import SellDetail from './pages/sell/Detail'
+import Buy from './pages/buy/Open'
+import BuyDetail from './pages/buy/Detail'
 
 function App() {
   return (
