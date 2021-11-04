@@ -1,8 +1,8 @@
 import React from 'react';
-import AboutBanner from '../components/Home/AboutBanner';
-import AboutText from '../components/Home/AboutText';
-import CustBanner from '../components/Home/CustBanner';
-import AboutCard from '../components/Home/AboutCard';
+import AboutBanner from '../components/About/AboutBanner';
+import AboutText from '../components/About/AboutText';
+import CustBanner from '../components/About/CustBanner';
+import AboutCard from '../components/About/AboutCard';
 
 // import styled from 'styled-components';
 
