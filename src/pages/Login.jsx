@@ -7,39 +7,25 @@ import { NavLink } from "react-router-dom";
 import loginSvg from '../assets/login.svg';
 
 function Login() {
-  const BREAK_POINT_LARGE = 992;
   const BREAK_POINT_MEDIUM = 768;
   const BREAK_POINT_SMALL = 576;
 
   const LoginArea = styled(Center)`
-    padding: 100px;
-    min-height: 100vh;
+    padding: 50px;
+    min-height: 85vh;
     background: url(${loginSvg});
     background-size: cover;
 
-    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
-      padding: 100px;
-    }
-    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-      padding: 120px;
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      padding: 30px;
     }
     
   `
   const Line = styled(Half)`
-  background: #fff;
+    background: #fff;
     border: 1px solid #e4e4e4;
     border-radius: 30px;
     box-shadow: 1px 1px 1px 1px #e4e4e4;
-    
-    img{
-      height: 500px;
-    }
-    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
-      img{
-        display: none;
-      }
-    }
-
   `
 
   const Section = styled.section`
@@ -63,11 +49,12 @@ function Login() {
 
   const Inputform = styled.section`
     width: 500px;
+    margin 0 auto;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
     }
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-      width: 200px;
+      width: 300px;
     }
   `;
 
@@ -77,7 +64,7 @@ function Login() {
       width: 400px;
     }
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-      width: 200px;
+      width: 300px;
     }
   `;
 
@@ -100,7 +87,6 @@ function Login() {
   return (
     <LoginArea>
       <Line>
-      {/* <img src="https://images.unsplash.com/photo-1519332978332-21b7d621d05e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="" />    */}
       <Section>
       <Form
         name="normal_login"

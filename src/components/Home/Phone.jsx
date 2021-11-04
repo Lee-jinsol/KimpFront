@@ -15,7 +15,6 @@ function Phone() {
         justify-content: space-between;
         align-items: center;
         padding: 30px 60px;
-        // background: #102A3E;
         
         background: url(${phoneSvg});
         background-size: cover;
@@ -41,7 +40,7 @@ function Phone() {
             }
         }
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            font-size: 13px;
+            font-size: 15px;
             line-height: 35px;
         }
         @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
@@ -62,8 +61,8 @@ function Phone() {
         }
     `
     const animatedItem = {
-        0: useScrollFadeIn('down', 1, 1.5),
-        1: useScrollFadeIn('down', 1, 2.0),
+        0: useScrollFadeIn('down', 1, 0.2),
+        1: useScrollFadeIn('down', 1, 0.4),
     }
 
     return (

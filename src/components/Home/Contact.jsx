@@ -22,7 +22,7 @@ function Contact() {
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
         padding: 40px;
         h1{
-            font-size: 20px;
+            font-size: 15px;
         }
     }
     `
@@ -82,8 +82,8 @@ function Contact() {
         font-size: 50px
     `
     const animatedItem = {
-        0: useScrollFadeIn('up', 1, 0),
-        1: useScrollFadeIn('up', 1, 0.2),
+        0: useScrollFadeIn('bottom', 1, 0),
+        1: useScrollFadeIn('bottom', 1, 0.2),
         2: useScrollFadeIn('up', 1, 0.3),
         3: useScrollFadeIn('up', 1, 0.4),
     }

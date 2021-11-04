@@ -5,6 +5,7 @@ import { useScrollFadeIn } from '../../hooks'
 
 function Circle() {
     const BREAK_POINT_LARGE = 992;
+    const BREAK_POINT_SMALL = 576;
 
     const Division = styled.div`
         display: flex;
@@ -13,6 +14,14 @@ function Circle() {
         }
         p{
             color: #C9C9C9;
+        }
+        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+            h2{
+                font-size: 14px;
+            }
+            p{
+                font-size: 12px;
+            }
         }
     `
 
@@ -35,11 +44,11 @@ function Circle() {
         }
     `
     const animatedItem = {
-        1: useScrollFadeIn('smallLeft', 1, 0.1),
-        2: useScrollFadeIn('smallLeft', 1, 0.2),
-        3: useScrollFadeIn('smallLeft', 1, 0.3),
-        4: useScrollFadeIn('smallLeft', 1, 0.4),
-        5: useScrollFadeIn('smallLeft', 1, 0.5),
+        1: useScrollFadeIn('bottom', 1, 0.1),
+        2: useScrollFadeIn('bottom', 1, 0.2),
+        3: useScrollFadeIn('bottom', 1, 0.3),
+        4: useScrollFadeIn('bottom', 1, 0.4),
+        5: useScrollFadeIn('bottom', 1, 0.5),
     };
 
     return (
