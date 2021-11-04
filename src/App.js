@@ -6,11 +6,11 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Register from './pages/Register/Register';
 import Login from './pages/Login';
-import Sell from './pages/Sell/Open';
-import SellSecret from './pages/Sell/Secret';
-import SellDetail from './pages/Sell/Detail';
-import Buy from './pages/Buy/Open';
-import BuyDetail from './pages/Buy/Detail';
+import Sell from './pages/sell/Open';
+import SellSecret from './pages/sell/Secret';
+import SellDetail from './pages/sell/Detail';
+import Buy from './pages/buy/Open';
+import BuyDetail from './pages/buy/Detail';
 
 function App() {
   return (
