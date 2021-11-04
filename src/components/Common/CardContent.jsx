@@ -1,11 +1,11 @@
-import React, { useState }  from 'react'
+import React from 'react'
 import { Card } from 'antd';
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
 
 function CardContent({content, index}) {
     const BREAK_POINT_MEDIUM = 768;
-    const BREAK_POINT_SMALL = 576;
+    // const BREAK_POINT_SMALL = 576;
 
     const CardSize = styled(Card)`
         width: 100%;

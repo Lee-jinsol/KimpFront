@@ -2,6 +2,7 @@ import React from 'react'
 import { PhoneFilled, MailFilled } from '@ant-design/icons';
 import styled from 'styled-components'
 import { useScrollFadeIn } from '../../hooks'
+import contactSvg from '../../assets/contact.svg';
 
 function Contact() {
 
@@ -9,7 +10,11 @@ function Contact() {
 
     const AtAnyTime =  styled.section`
     padding: 50px;
-    background: #102A3E;
+    // background: #102A3E;
+
+    background: url(${contactSvg});
+    background-size: cover;
+
     text-align: center;
     h1{ 
         color: #fff;

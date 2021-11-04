@@ -10,6 +10,7 @@ function Open() {
 
     const ListSection = styled.section`
         padding: 50px;
+        
         @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
             padding: 20px;
         }

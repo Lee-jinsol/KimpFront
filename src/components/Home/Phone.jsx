@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { PhoneFilled } from '@ant-design/icons';
 import { useScrollFadeIn } from '../../hooks'
+import phoneSvg from '../../assets/c.svg';
 
 function Phone() {
     
@@ -14,7 +15,11 @@ function Phone() {
         justify-content: space-between;
         align-items: center;
         padding: 30px 60px;
-        background: #102A3E;
+        // background: #102A3E;
+        
+        background: url(${phoneSvg});
+        background-size: cover;
+
         color: #fff;
         font-weight: bold;
         font-size: 20px;
