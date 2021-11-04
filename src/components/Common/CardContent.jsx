@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 function CardContent({content, index}) {
     const BREAK_POINT_MEDIUM = 768;
-    // const BREAK_POINT_SMALL = 576;
 
     const CardSize = styled(Card)`
         width: 100%;
@@ -18,12 +17,8 @@ function CardContent({content, index}) {
          @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
              height: 380px;
          }
-        // `
-        // const [count, setCount] = useState(content.count);
-
-        // const counter = () => {
-        //    setCount(prevCount => prevCount + 1);
-        // }
+    `
+    
     return (
         <div>
             <NavLink to={content.sellBuySide === 'sell' ? `/list/${content.name}`  : `/buy/${content.name}`}>

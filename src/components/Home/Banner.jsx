@@ -61,23 +61,23 @@ function Banner() {
         line-height: 30px;
         text-align: right;
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            top: 450px;
+            top: 430px;
             left: 0;
             text-align: center;
             width: 100%;
-            font-size: 12px;
+            font-size: 13px;
         }
     `
     const animatedItem = {
-        0: useScrollFadeIn('left', 1, 0),
-        1: useScrollFadeIn('left', 1, 0.5),
-        2: useScrollFadeIn('up', 1, 0.7),
+        0: useScrollFadeIn('bottom', 1, 0),
+        1: useScrollFadeIn('bottom', 1, 0.2),
+        2: useScrollFadeIn('bottom', 1, 0.4),
         3: useScrollFadeIn('right', 1, 1.0),
     };
 
     return (
         <>
-            <Section style={BulidingImg}>
+            <Section style={BulidingImg} >
                 <D1 {...animatedItem[0]}>
                     Safe Process of M&A, <br/>
                     We will DO BEST <br/>
@@ -88,9 +88,9 @@ function Banner() {
                     <b>I</b>nternational <br/>
                     <b>M</b>&A  <br/>
                     <b>P</b>latform  <br/><br/>
-                    <h1 {...animatedItem[2]}>KIMP</h1>
+                    <h1>KIMP</h1>
                 </D2>
-                <D3 {...animatedItem[3]}>
+                <D3 {...animatedItem[2]}>
                 M&A 중개 및 사업승계 컨설팅 서비스를 제공하는 KIMP.<br/>
                 어렵기만한 M&A, KIMP가 해결해 드립니다. <br/>
                 한국무역협회 산하의 KIMP에서 안전한 M&A 바로 시작하세요.
