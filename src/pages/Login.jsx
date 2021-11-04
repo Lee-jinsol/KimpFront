@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Center from '../components/Layout/Center'
 import Half from '../components/Layout/Half'
 import { NavLink } from "react-router-dom";
+import loginSvg from '../assets/login.svg';
 
 function Login() {
   const BREAK_POINT_LARGE = 992;
@@ -11,7 +12,11 @@ function Login() {
   const BREAK_POINT_SMALL = 576;
 
   const LoginArea = styled(Center)`
-    padding: 30px;
+    padding: 100px;
+    min-height: 100vh;
+    background: url(${loginSvg});
+    background-size: cover;
+
     @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
       padding: 100px;
     }
@@ -21,9 +26,14 @@ function Login() {
     
   `
   const Line = styled(Half)`
+  background: #fff;
     border: 1px solid #e4e4e4;
     border-radius: 30px;
     box-shadow: 1px 1px 1px 1px #e4e4e4;
+    
+    img{
+      height: 500px;
+    }
     @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
       img{
         display: none;
@@ -33,9 +43,6 @@ function Login() {
   `
 
   const Section = styled.section`
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     display: block;
     padding: 30px;
     text-align: center;
@@ -55,7 +62,7 @@ function Login() {
   `;
 
   const Inputform = styled.section`
-    width: 400px;
+    width: 500px;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
     }
@@ -65,7 +72,7 @@ function Login() {
   `;
 
   const LoginButton = styled(Button)`
-    width: 400px;
+    width: 500px;
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       width: 400px;
     }
@@ -93,7 +100,7 @@ function Login() {
   return (
     <LoginArea>
       <Line>
-      <img src="https://images.unsplash.com/photo-1519332978332-21b7d621d05e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="" />   
+      {/* <img src="https://images.unsplash.com/photo-1519332978332-21b7d621d05e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="" />    */}
       <Section>
       <Form
         name="normal_login"

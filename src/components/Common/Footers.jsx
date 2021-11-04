@@ -67,7 +67,6 @@ function Footers() {
             }
         }
     `
-    
 
     return (
         <div>

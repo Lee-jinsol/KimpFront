@@ -10,6 +10,7 @@ import Phone from '../components/Home/Phone';
 import Contact from '../components/Home/Contact';
 import UserInfo from '../components/Home/UserInfo';
 import Progress from '../components/Home/Progress';
+import ndaSvg from '../assets/nda.svg';
 
 import { useScrollFadeIn } from '../hooks'
 
@@ -18,7 +19,10 @@ function Home() {
     const BREAK_POINT_SMALL = 576;
 
     const NDA = styled.section`
-        background: #102A3E;
+        // background: #385066;
+        background: url(${ndaSvg});
+        background-size: cover;
+
         color: #fff;
         width: 100%;
         height: 200px;
