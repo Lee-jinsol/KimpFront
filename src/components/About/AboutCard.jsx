@@ -21,6 +21,7 @@ function AboutCard() {
 
   const Card = styled.section`
     position: relative;
+    width: 100%;
     div {
       justify-content: space-evenly;
       // width: 100%;
@@ -45,10 +46,10 @@ function AboutCard() {
   const Division = styled.div`
     display: flex;
     h2 {
-      color: #fff;
+      color: black;
     }
     p {
-      color: #c9c9c9;
+      color: black;
     }
   `;
 
@@ -61,32 +62,43 @@ function AboutCard() {
     }
   `;
 
+  const Textarea = styled.div`
+    padding-left: 30px;
+    width: 350px;
+    // @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+    //   width: 250px;
+    // }
+    // @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+    //   width: 300px;
+    // }
+  `;
+
   return (
     <Card>
       <Half>
         <Block>
           <Division>
             <Number black>1</Number>
-            <div style={{paddingLeft: '30px'}}>
+            <Textarea>
               <h2>안전한 정보공유</h2>
               <p>한국무역협회에서 분사한 M&A플랫폼</p>
-            </div>
+            </Textarea>
           </Division>
           <Line />
           <Division>
             <Number black>2</Number>
-            <div style={{paddingLeft: '30px'}}>
+            <Textarea>
               <h2>다양한 매물</h2>
               <p>M&A 생태계 다양한 관계자들을 포용</p>
-            </div>
+            </Textarea>
           </Division>
           <Line />
           <Division>
             <Number black>3</Number>
-            <div style={{paddingLeft: '30px'}}>
+            <Textarea>
               <h2>딱맞는 연결</h2>
               <p>최적의 전문가 및 네트워킹을 통한 선택</p>
-            </div>
+            </Textarea>
           </Division>
         </Block>
 
@@ -95,7 +107,7 @@ function AboutCard() {
 
       <Half style={{paddingTop: '100px', borderBottom: '1px solid #e7e7e77e'}}>
         <img src={CardImg2} alt="카드2" />
-        <div>
+        <div style={{textAlign: 'center', width: '60%'}}>
           <h1>
             Safe Process of M&A,
             <br />
