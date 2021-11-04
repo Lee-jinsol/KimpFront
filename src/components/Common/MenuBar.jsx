@@ -179,21 +179,21 @@ function MenuBar() {
             width: 100%;
         }
     `
-    const DownMenu = styled.div`
-        display: none;
-        float: left;
-        text-align: center;
-        ul{
-            background: #EBEBEB;
-            li{ 
-                width: 100%;
-            }
-        }
-        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            width: 100%;
-            position: static;
-        }
-    `
+    // const DownMenu = styled.div`
+    //     display: none;
+    //     float: left;
+    //     text-align: center;
+    //     ul{
+    //         background: #EBEBEB;
+    //         li{ 
+    //             width: 100%;
+    //         }
+    //     }
+    //     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+    //         width: 100%;
+    //         position: static;
+    //     }
+    // `
 
 
 

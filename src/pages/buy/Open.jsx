@@ -1,5 +1,5 @@
 import React from 'react'
-import Center from '../../components/Layout/Center';
+// import Center from '../../components/Layout/Center';
 // import Properties from '../../components/Buy/Properties';
 import ForSale from '../../components/List/ForSale';
 import styled from 'styled-components'

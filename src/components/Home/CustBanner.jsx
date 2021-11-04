@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import BoyImg from '../../image/BoyImg.png';
-import GirlImg from '../../image/GirlImg.png';
+// import BoyImg from '../../image/BoyImg.png';
+// import GirlImg from '../../image/GirlImg.png';
 import CityImg from '../../image/CityImg.png';
 
 function CustBanner() {

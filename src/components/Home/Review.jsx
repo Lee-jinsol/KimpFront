@@ -1,5 +1,5 @@
 import React from 'react'
-import { Comment, Rate,  Card } from 'antd';
+import { Comment,  Card } from 'antd';
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
