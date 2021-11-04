@@ -23,7 +23,7 @@ function AboutCard() {
     position: relative;
     div {
       justify-content: space-evenly;
-      width: 100%;
+      // width: 100%;
       justify-content: center;
       align-items: center;
       text-align: center;
