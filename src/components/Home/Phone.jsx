@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { PhoneFilled } from '@ant-design/icons';
 import { useScrollFadeIn } from '../../hooks'
-import phoneSvg from '../../assets/c.svg';
+import phoneSvg from '../../assets/phone.svg';
 
 function Phone() {
     

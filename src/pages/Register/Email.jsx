@@ -30,7 +30,7 @@ function Email(props) {
         const emailValue = modalForm.getFieldValue('modalEmail');
         const vaildValue = modalForm.getFieldValue('verification');
 
-        if(emailValue !== '' && vaildValue !== ''){
+        if(emailValue !== undefined || vaildValue !== undefined){
             props.form.setFieldsValue({
                 email: emailValue
             })
