@@ -179,27 +179,10 @@ function MenuBar() {
             width: 100%;
         }
     `
-    // const DownMenu = styled.div`
-    //     display: none;
-    //     float: left;
-    //     text-align: center;
-    //     ul{
-    //         background: #EBEBEB;
-    //         li{ 
-    //             width: 100%;
-    //         }
-    //     }
-    //     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-    //         width: 100%;
-    //         position: static;
-    //     }
-    // `
-
-
 
     const [click, setClick] = useState(false);
-
     const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
 
     return (
         <>
@@ -207,42 +190,21 @@ function MenuBar() {
                 <Logo/>
                 <nav className={click ? "mobile" : "nav-menu"}>
                     <ul>
-                    <li><NavLink to="/list">
+                    <li><NavLink to="/list" onClick={closeMobileMenu}>
                             Sell List
                             &nbsp;<DownOutlined className="line" />
                         </NavLink>
                         <SubMenu>
                             <ul>
-                                <li><NavLink to="/list/open">공개정보</NavLink></li>
-                                <li><NavLink to="/list/secret">비공개정보</NavLink></li>
+                                <li><NavLink to="/list/open" onClick={closeMobileMenu}>공개정보</NavLink></li>
+                                <li><NavLink to="/list/secret" onClick={closeMobileMenu}>비공개정보</NavLink></li>
                             </ul>
                         </SubMenu>
                         </li>
-                    <li><NavLink to="/buy">Buy List</NavLink></li> 
-                        
-                        {/* <li><NavLink to="/list">
-                            Sell List
-                            <DropDown>
-                                <ul>
-                                    <li><NavLink to="/list">Open</NavLink></li>
-                                    <li><NavLink to="/buy/open">Secret</NavLink></li>
-                                </ul>
-                            </DropDown>
-                            </NavLink>
-                        </li>
-                        <li><NavLink to="/buy/open">
-                            Buy List
-                            <DropDown>
-                                <ul>
-                                    <li><NavLink to="/buy/open">Open</NavLink></li>
-                                    <li><NavLink to="/buy/open">Secret</NavLink></li>
-                                </ul>
-                            </DropDown>
-                            </NavLink>
-                        </li> */}
-                        <li><NavLink to="/aboutUs">About Us</NavLink></li>
-                        <li><NavLink to="/logIn">Log In</NavLink></li>
-                        <li><NavLink to="/register">Register</NavLink></li>
+                    <li><NavLink to="/buy" onClick={closeMobileMenu}>Buy List</NavLink></li> 
+                    <li><NavLink to="/aboutUs" onClick={closeMobileMenu}>About Us</NavLink></li>
+                    <li><NavLink to="/logIn" onClick={closeMobileMenu}>Log In</NavLink></li>
+                    <li><NavLink to="/register" onClick={closeMobileMenu}>Register</NavLink></li>
                     </ul>
                     <Icon className="icon" onClick={handleClick}>
                         { click ?  <CloseOutlined /> : <MenuOutlined />}

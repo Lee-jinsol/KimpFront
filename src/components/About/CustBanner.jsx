@@ -5,31 +5,53 @@ import styled from 'styled-components';
 import CityImg from '../../image/CityImg.png';
 
 function CustBanner() {
-  const Textdiv = styled.div`
-    position: relative;
-    height: 338px;
-    width: 30%;
-    color: white;
+  const BREAK_POINT_LARGE = 992;
+
+  const CustHalf = styled.div`
+    padding: 0;
     background: #102a3e;
-    font-weight: bold;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    float: left;
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      display: block;
+    }
+  `
+
+  const Textdiv = styled.div`
+    // position: relative;
+    // height: 338px;
+    width: 30%;
+    color: white;
+    // background: #102a3e;
+    // font-weight: bold;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // text-align: center;
+    // float: left;
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      width: 100%;
+      padding: 20px;
+    }
   `;
   const Imgdiv = styled.div`
+    content: "";
+    // float: left;
     width: 70%;
-    float: left;
     height: 338px;
 
     background: url(${CityImg});
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      width: 100%;
+    }
   `;
 
   return (
-    <div>
-      <Imgdiv>sdfsd</Imgdiv>
-
+    <CustHalf>
+      <Imgdiv/>
       <Textdiv>
         <p>
           KIMP가 갖고있는 다양한 매물들 중에
@@ -39,7 +61,7 @@ function CustBanner() {
           <br></br>한 눈에 볼 수 있도록 도와드립니다.
         </p>
       </Textdiv>
-    </div>
+    </CustHalf>
   );
 }
 export default CustBanner;

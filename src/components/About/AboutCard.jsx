@@ -7,54 +7,45 @@ import Number from '../Home/Number';
 
 function AboutCard() {
   const BREAK_POINT_MEDIUM = 768;
-  const BREAK_POINT_SMALL = 576;
+  // const BREAK_POINT_SMALL = 576;
   const BREAK_POINT_LARGE = 992;
 
   const Block = styled.div`
-    width: 100%;
     display: block;
-    padding: 20px;
     @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
       padding: 0;
     }
   `;
 
   const Card = styled.section`
-    position: relative;
+  margin-top: 100px;
+   img{
+     width: 600px;
+   }
+   @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+    padding: 20px;
+    margin-top: 50px;
+    img{
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+    padding: 10px;
+  } 
+  `
+
+  const HalfFix = styled(Half)`
+    justify-content: space-evenly;
     width: 100%;
-    div {
-      justify-content: space-evenly;
-      // width: 100%;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    img {
-      justify-content: space-evenly;
-      height: 400px;
-      width: 600px;
-      @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-        height: 300px;
-        width: 450px;
-      }
-      @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-        height: 300px;
-        width: 450px;
-      }
-    }
-  `;
+  `
+
   const Division = styled.div`
     display: flex;
-    h2 {
-      color: black;
-    }
-    p {
-      color: black;
-    }
+    color: black;
   `;
 
   const Line = styled.div`
-    border-left: 1px solid #fff;
+    border-left: 1px solid #102A3E;
     height: 40px;
     margin: 20px;
     @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
@@ -64,18 +55,22 @@ function AboutCard() {
 
   const Textarea = styled.div`
     padding-left: 30px;
-    width: 350px;
-    // @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
-    //   width: 250px;
-    // }
-    // @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-    //   width: 300px;
-    // }
   `;
+
+  const FinalArea = styled.div`
+   div{
+    margin-right: 120px;
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      maring-right: 0;
+      padding-top: 20px;
+      width: 100%;
+    }
+   }
+  `
 
   return (
     <Card>
-      <Half>
+      <HalfFix>
         <Block>
           <Division>
             <Number black>1</Number>
@@ -103,27 +98,29 @@ function AboutCard() {
         </Block>
 
         <img src={CardImg1} alt="카드1" />
-      </Half>
+      </HalfFix>
 
-      <Half style={{paddingTop: '100px', borderBottom: '1px solid #e7e7e77e'}}>
+      <HalfFix>
         <img src={CardImg2} alt="카드2" />
-        <div style={{textAlign: 'center', width: '60%'}}>
-          <h1>
-            Safe Process of M&A,
-            <br />
-            We will DO BEST
-            <br />
-            for your BUSINESS.
-          </h1>
-          <p>
-            M&A 중개 및 사업승계 컨설팅 서비스를 제공하는 KIMP.
-            <br />
-            어렵기만한 M&A, KIMP가 해결해 드립니다.
-            <br />
-            한국무역협회 산하의 KIMP에서 안전한 M&A 바로 시작하세요. <br />
-          </p>
-        </div>
-      </Half>
+        <FinalArea>
+          <div>
+            <h1>
+              Safe Process of M&A,
+              <br />
+              We will DO BEST
+              <br />
+              for your BUSINESS.
+            </h1>
+            <p>
+              M&A 중개 및 사업승계 컨설팅 서비스를 제공하는 KIMP.
+              <br />
+              어렵기만한 M&A, KIMP가 해결해 드립니다.
+              <br />
+              한국무역협회 산하의 KIMP에서 안전한 M&A 바로 시작하세요. <br />
+            </p>
+          </div>
+        </FinalArea>
+      </HalfFix>
     </Card>
   );
 }
