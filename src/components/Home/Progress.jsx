@@ -8,7 +8,8 @@ import Circle from './Circle';
 function Progress() {
     const BREAK_POINT_EXTRA_LARGE = 1200;
     const BREAK_POINT_LARGE = 992;
-    const BREAK_POINT_SMALL = 576;
+    const BREAK_POINT_MEDIUM = 768;
+    // const BREAK_POINT_SMALL = 576;
 
     const Reason =  styled.section`
         padding: 30px;
@@ -49,9 +50,9 @@ function Progress() {
                 display: none;
             }
         }
-        @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
             h1{
-                font-size: 15px;
+                font-size: 20px;
             }
         }
     `

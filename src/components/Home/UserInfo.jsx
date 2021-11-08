@@ -36,12 +36,8 @@ function UserInfo() {
             }
             div{
                 text-align: center;
-            }
-        }
-        @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-            div{
                 h1{
-                    font-size: 15px;
+                    font-size: 20px;
                 }
             }
         }
