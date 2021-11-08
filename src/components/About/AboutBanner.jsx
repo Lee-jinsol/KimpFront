@@ -9,12 +9,12 @@ const BulidingImg = {
   width: '100%',
   height: '400px',
 };
-
 const BREAK_POINT_MEDIUM = 768;
 
 function AboutBanner() {
   const Section = styled.section`
     position: relative;
+    width: 100%;
     padding: 20px;
     div {
       color: #fff;
@@ -25,27 +25,22 @@ function AboutBanner() {
       }
     }
   `;
-  const D1 = styled.div`
-    width: 100%;
+  const BannerText = styled.div`
     text-align: center;
     top: 20%;
-    font-size: 60px;
-    line-height: 40px;
-  `;
-
-  const D2 = styled.div`
+    left: 0;
     width: 100%;
     text-align: center;
-    top: 40%;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: normal;
+    font-size: 60px;
+    line-height: 40px;
+    b{
+      font-size: 20px;
+    }
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-      top: 200px;
-      left: 0;
-      text-align: center;
-      width: 100%;
-      font-size: 17px;
+      font-size: 40px;
+      b{
+        font-size: 17px;
+      }
     }
   `;
 
@@ -76,10 +71,10 @@ function AboutBanner() {
   return (
     <>
       <Section style={BulidingImg}>
-        <D1>KIMP</D1>
-        <D2>
+        <BannerText>
+          <p>KIMP</p>
           <b> Korea International M&A Platfom </b>
-        </D2>
+        </BannerText>
         <Box>
           <span>
             M&A 중개 및 사업승계 컨설팅 서비스를 제공하는 KIMP.
