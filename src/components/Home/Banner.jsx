@@ -34,7 +34,7 @@ function Banner() {
         @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
             top: 30px;
             left: 0;
-            font-size: 25px;
+            font-size: 7vw;
             width: 100%;
             text-align: center;
         }
@@ -51,7 +51,7 @@ function Banner() {
             left: 0;
             text-align: center;
             width: 100%;
-            font-size: 17px;
+            font-size: 5vw;
         } 
     `
     const D3 = styled.div`
@@ -65,7 +65,7 @@ function Banner() {
             left: 0;
             text-align: center;
             width: 100%;
-            font-size: 13px;
+            font-size: 3vw;
         }
     `
     const animatedItem = {
