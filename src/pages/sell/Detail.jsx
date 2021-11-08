@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import { SellOpen } from '../../data/SellOpen'
 
 import { Divider, message } from 'antd'
@@ -37,6 +37,10 @@ function Detail(props) {
         }
     `
     const [click, setClick] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     const handleClick = () => {
         setClick(!click);

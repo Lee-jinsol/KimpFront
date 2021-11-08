@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState }  from 'react'
 import { Col, Row, Pagination, Input } from 'antd';
 import Center from '../Layout/Center';
 import Half from '../Layout/Half';
@@ -10,6 +10,7 @@ const { Search } = Input;
 function ForSale(props) {
     const openData = props.list;
     const BuyorSell = props.text;
+    
 
     const pageDefault = {
         min: 0,
@@ -20,6 +21,7 @@ function ForSale(props) {
     const [PageValue, setPageValue] = useState(pageDefault)
 
     const handleChange = (value) => {
+        window.scrollTo(0, 0);
         if(value === 1){
             setPageValue({
                min: 0,
@@ -27,8 +29,10 @@ function ForSale(props) {
             })
         }else{
             setPageValue({
-                min: PageValue.max,
-                max: value * 12
+                // min: PageValue.max,
+                // max: value * 12
+                min: (value - 1) * 12,
+                max: ((value - 1) * 12) + 12
              })
         }
     }
