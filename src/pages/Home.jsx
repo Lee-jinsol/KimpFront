@@ -42,7 +42,7 @@ function Home() {
     @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
         padding: 20px;
         h1{
-            font-size: 20px;
+            font-size: 5vw;
         }
     }
     `
