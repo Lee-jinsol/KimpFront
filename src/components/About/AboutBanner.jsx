@@ -19,7 +19,6 @@ function AboutBanner() {
     div {
       color: #fff;
       position: absolute;
-      font-weight: bold;
       h1 {
         color: #fff;
       }
@@ -33,12 +32,12 @@ function AboutBanner() {
     text-align: center;
     font-size: 60px;
     line-height: 40px;
-    b{
+    b {
       font-size: 20px;
     }
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
       font-size: 40px;
-      b{
+      b {
         font-size: 17px;
       }
     }
@@ -56,13 +55,14 @@ function AboutBanner() {
     background: white;
     border-radius: 10px;
     span {
-      font-size: 15px;
-      color: black;
+      font-size: 18px;
+      color: #2c3e50;
       text-align: center;
       width: 100%;
       top: 50%;
       position: absolute;
       transform: translateY(-50%);
+      line-height: 30px;
     }
     line-height: 20px;
     font-weight: normal;
