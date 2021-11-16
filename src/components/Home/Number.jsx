@@ -4,8 +4,8 @@ const BREAK_POINT_SMALL = 576;
 
 const Number = styled.div`
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 47px;
+  height: 47px;
   background: #102a3e;
   color: #fff;
   display: flex;

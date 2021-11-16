@@ -10,6 +10,8 @@ const BulidingImg = {
   height: '400px',
 };
 const BREAK_POINT_MEDIUM = 768;
+const BREAK_POINT_SMALL = 576;
+const BREAK_POINT_LARGE = 992;
 
 function AboutBanner() {
   const Section = styled.section`
@@ -36,6 +38,12 @@ function AboutBanner() {
       font-size: 20px;
     }
     @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      font-size: 50px;
+      b {
+        font-size: 17px;
+      }
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
       font-size: 40px;
       b {
         font-size: 17px;
@@ -66,6 +74,20 @@ function AboutBanner() {
     }
     line-height: 20px;
     font-weight: normal;
+
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      span {
+        font-size: 14px;
+      }
+      top: 80%;
+    }
+    @media only screen and (max-width: ${BREAK_POINT_SMALL}px) {
+      span {
+        font-size: 14px;
+      }
+      width: 70%;
+      top: 80%;
+    }
   `;
 
   return (

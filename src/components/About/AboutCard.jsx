@@ -7,7 +7,7 @@ import Number from '../Home/Number';
 
 function AboutCard() {
   const BREAK_POINT_MEDIUM = 768;
-  // const BREAK_POINT_SMALL = 576;
+  const BREAK_POINT_SMALL = 576;
   const BREAK_POINT_LARGE = 992;
 
   const Block = styled.div`
@@ -18,26 +18,26 @@ function AboutCard() {
   `;
 
   const Card = styled.section`
-  margin-top: 100px;
-   img{
-     width: 600px;
-   }
-   @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
-    padding: 20px;
-    margin-top: 50px;
-    img{
-      width: 100%;
+    margin-top: 100px;
+    img {
+      width: 600px;
     }
-  }
-  @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
-    padding: 10px;
-  } 
-  `
+    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+      padding: 20px;
+      margin-top: 50px;
+      img {
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      padding: 10px;
+    }
+  `;
 
   const HalfFix = styled(Half)`
     justify-content: space-evenly;
     width: 100%;
-  `
+  `;
 
   const Division = styled.div`
     display: flex;
@@ -45,7 +45,7 @@ function AboutCard() {
   `;
 
   const Line = styled.div`
-    border-left: 1px solid #102A3E;
+    border-left: 1px solid #102a3e;
     height: 40px;
     margin: 20px;
     @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
@@ -55,18 +55,29 @@ function AboutCard() {
 
   const Textarea = styled.div`
     padding-left: 30px;
+    font-size: 15px;
+
+    @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+      font-size: 14px;
+    }
   `;
 
   const FinalArea = styled.div`
-   div{
-    margin-right: 120px;
-    @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
-      maring-right: 0;
-      padding-top: 20px;
-      width: 100%;
+    div {
+      margin-right: 120px;
+      @media only screen and (max-width: ${BREAK_POINT_LARGE}px) {
+        maring-right: 0;
+        padding-top: 20px;
+        width: 100%;
+      }
+      @media only screen and (max-width: ${BREAK_POINT_MEDIUM}px) {
+        maring-right: 0;
+        padding-top: 20px;
+        width: 100%;
+        font-size: 14px;
+      }
     }
-   }
-  `
+  `;
 
   return (
     <Card>
@@ -75,7 +86,7 @@ function AboutCard() {
           <Division>
             <Number black>1</Number>
             <Textarea>
-              <h2>안전한 정보공유</h2>
+              <h3>안전한 정보공유</h3>
               <p>한국무역협회에서 분사한 M&A플랫폼</p>
             </Textarea>
           </Division>
@@ -83,7 +94,7 @@ function AboutCard() {
           <Division>
             <Number black>2</Number>
             <Textarea>
-              <h2>다양한 매물</h2>
+              <h3>다양한 매물</h3>
               <p>M&A 생태계 다양한 관계자들을 포용</p>
             </Textarea>
           </Division>
@@ -91,7 +102,7 @@ function AboutCard() {
           <Division>
             <Number black>3</Number>
             <Textarea>
-              <h2>딱맞는 연결</h2>
+              <h3>딱맞는 연결</h3>
               <p>최적의 전문가 및 네트워킹을 통한 선택</p>
             </Textarea>
           </Division>
